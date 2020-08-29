@@ -1,10 +1,16 @@
-﻿using System;
+﻿
+/*
+* Author: Nathan Connor
+* Class name: BriarheartBurger.cs
+* Purpose: Entree object constructor for BleakwindBuffet
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class BriarheartBurder
+    class BriarheartBurger
     {
         public double Price
         {

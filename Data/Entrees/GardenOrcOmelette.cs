@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nathan Connor
+* Class name: GardenOrcOmelette.cs
+* Purpose: Entree object constructor for BleakwindBuffet
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nathan Connor
+* Class name: AretinoAppleJuice.cs
+* Purpose: Drink object constructor for BleakwindBuffet
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
