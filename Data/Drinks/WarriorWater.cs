@@ -9,9 +9,9 @@ using System.Text;
 using BleakwindBuffet.Data.Enums;
 
 
-namespace Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
-    class WarriorWater
+    public class WarriorWater
     {
         public double Price
         {

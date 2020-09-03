@@ -11,7 +11,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class CandlehearthCoffee
+    public class CandlehearthCoffee
     {
         public double Price
         {
@@ -79,4 +79,4 @@ namespace BleakwindBuffet.Data.Drinks
         }
     }
 }
-}
+
