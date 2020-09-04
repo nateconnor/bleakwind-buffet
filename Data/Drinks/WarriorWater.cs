@@ -11,8 +11,14 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class for representing WarriorWater
+    /// </summary>
     public class WarriorWater
     {
+        /// <summary>
+        /// The Price of the drink
+        /// </summary>
         public double Price
         {
             get
@@ -21,6 +27,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// The calories of the drink
+        /// </summary>
         public uint Calories
         {
             get
@@ -29,34 +38,49 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// The size of the drink
+        /// </summary>
         public Size Size
         {
             get; set;
         } = Size.Small;
 
-        
 
-        public bool Ice = true;
-        public bool Lemon = false;
+        /// <summary>
+        /// Whether or not the drink has ice
+        /// </summary>
+        public bool Ice { get; set; } = true;
+        /// <summary>
+        /// Whether or not the drink has lemon
+        /// </summary>
+        public bool Lemon { get; set; } = false;
 
+        /// <summary>
+        /// A list of special insturctions for preparing the drink
+        /// </summary>
         public List<String> SpecialInstructions
         {
             get
             {
+                List<String> SpecialInstructions = new List<string>();
                 if (!Ice)
                 {
                     SpecialInstructions.Add("Hold ice");
                 }
                 if (Lemon)
                 {
-                    SpecialInstructions.Add("Add Lemon");
+                    SpecialInstructions.Add("Add lemon");
                 }
                 return SpecialInstructions;
             }
         }
 
 
-
+        /// <summary>
+        /// Returns a description of the drink
+        /// </summary>
+        /// <returns> A string describing the drink</returns>
         public override string ToString()
         {
             return $"{Size} Warrior Water";

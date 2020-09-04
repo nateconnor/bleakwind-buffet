@@ -9,8 +9,14 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class for representing Garden Orc Omelette
+    /// </summary>
     public class GardenOrcOmelette
     {
+        /// <summary>
+        /// The Price of the entree
+        /// </summary>
         public double Price
         {
             get
@@ -19,6 +25,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// The calories of the entree
+        /// </summary>
         public uint Calories
         {
             get
@@ -27,9 +36,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A list of special insturctions for preparing the entree
+        /// </summary>
         public List<String> SpecialInstructions
         {
-            get { 
+            get {
+                List<String> SpecialInstructions = new List<String>();
+
                 if (!Broccoli)
                 {
                     SpecialInstructions.Add("Hold Broccoli");
@@ -52,8 +66,27 @@ namespace BleakwindBuffet.Data.Entrees
 
         }
 
-        public bool Broccoli, Mushrooms, Tomato, Cheddar = true;
+        /// <summary>
+        /// Whether or not the entree has Broccoli
+        /// </summary>
+        public bool Broccoli { get; set; }= true;
+        /// <summary>
+        /// Whether or not the entree has Mushrooms
+        /// </summary>
+        public bool Mushrooms { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Tomato
+        /// </summary>
+        public bool Tomato { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Cheddar
+        /// </summary>
+        public bool Cheddar { get; set; } = true;
 
+        /// <summary>
+        /// Returns a description of the entree
+        /// </summary>
+        /// <returns> A string describing the entree</returns>
         public override string ToString()
         {
             return "Garden Orc Omelette";

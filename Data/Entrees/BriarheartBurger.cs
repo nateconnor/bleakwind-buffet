@@ -10,16 +10,25 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class for representing Briarheart Burger
+    /// </summary>
     public class BriarheartBurger
     {
+        /// <summary>
+        /// The Price of the entree
+        /// </summary>
         public double Price
         {
             get
             {
                 return 6.32;
             }
-        } 
+        }
 
+        /// <summary>
+        /// The calories of the entree
+        /// </summary>
         public uint Calories
         {
             get
@@ -28,10 +37,14 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A list of special insturctions for preparing the entree
+        /// </summary>
         public List<String> SpecialInstructions
         {
             get
             {
+                List<String> SpecialInstructions = new List<String>();
                 if (!Bun)
                 {
                     SpecialInstructions.Add("Hold Bun");
@@ -54,12 +67,35 @@ namespace BleakwindBuffet.Data.Entrees
                 }
                 return SpecialInstructions;
             }
-           
+
         }
-            
 
-        public bool Bun, Ketchup, Mustard, Pickle, Cheese = true;
+        /// <summary>
+        /// Whether or not the entree has bun
+        /// </summary>
+        public bool Bun { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has ketchup
+        /// </summary>
+        public bool Ketchup { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has mustard
+        /// </summary>
+        public bool Mustard { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Pickle
+        /// </summary>
+        public bool Pickle { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Cheese
+        /// </summary>
+        public bool Cheese { get; set; } = true;
+        
 
+        /// <summary>
+        /// Returns a description of the entree
+        /// </summary>
+        /// <returns> A string describing the entree</returns>
         public override string ToString()
         {
             return "Briarheart Burger";

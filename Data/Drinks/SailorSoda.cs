@@ -10,8 +10,14 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class for representing Sailor Soda
+    /// </summary>
     public class SailorSoda
     {
+        /// <summary>
+        /// The Price of the drink
+        /// </summary>
         public double Price
         {
             get
@@ -27,6 +33,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// The calories of the drink
+        /// </summary>
         public uint Calories
         {
             get
@@ -41,22 +50,36 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// The size of the drink
+        /// </summary>
         public Size Size
         {
             get; set;
         } = Size.Small;
 
+        /// <summary>
+        /// The flavor of the drink
+        /// </summary>
         public SodaFlavor Flavor
         {
             get; set;
         } = SodaFlavor.Cherry;
 
-        public bool Ice { get; set; } =  true;        
+        /// <summary>
+        /// Whether or not the drink has ice
+        /// </summary>
+        public bool Ice { get; set; } =  true;
 
+        /// <summary>
+        /// A list of special insturctions for preparing the drink
+        /// </summary>
         public List<String> SpecialInstructions
         {
             get
             {
+                List<String> SpecialInstructions = new List<string>();
+
                 if (!Ice)
                 {
                     SpecialInstructions.Add("Hold ice");
@@ -66,7 +89,10 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
 
-
+        /// <summary>
+        /// Returns a description of the drink
+        /// </summary>
+        /// <returns> A string describing the drink</returns>
         public override string ToString()
         {
             return $"{Size} {Flavor} Sailor Soda";

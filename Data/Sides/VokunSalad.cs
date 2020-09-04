@@ -11,8 +11,14 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// Class for representing Vokun Salad
+    /// </summary>
     public class VokunSalad
     {
+        /// <summary>
+        /// The Price of the side
+        /// </summary>
         public double Price
         {
             get
@@ -27,13 +33,22 @@ namespace BleakwindBuffet.Data.Sides
 
             }
         }
+
+        /// <summary>
+        /// A list of special insturctions for preparing the side
+        /// </summary>
         public List<String> SpecialInstructions
         {
             get
             {
+                List<String> SpecialInstructions = new List<string>();
                 return SpecialInstructions;
             }
         }
+
+        /// <summary>
+        /// The calories of the side
+        /// </summary>
         public uint Calories
         {
             get
@@ -48,12 +63,18 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
+        /// <summary>
+        /// The size of the side
+        /// </summary>
         public Size Size
         {
             get; set;
         } = Size.Small;
 
-
+        /// <summary>
+        /// Returns a description of the side
+        /// </summary>
+        /// <returns> A string describing the side</returns>
         public override string ToString()
         {
             return $"{Size} Vokun Salad";

@@ -9,8 +9,14 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class for representing Smokehouse Skeleton
+    /// </summary>
     public class SmokehouseSkeleton
     {
+        /// <summary>
+        /// The Price of the entree
+        /// </summary>
         public double Price
         {
             get
@@ -19,6 +25,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// The calories of the entree
+        /// </summary>
         public uint Calories
         {
             get
@@ -27,10 +36,15 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A list of special insturctions for preparing the entree
+        /// </summary>
         public List<String> SpecialInstructions
         {
             get
             {
+                List<String> SpecialInstructions = new List<String>();
+
                 if (!SausageLink)
                 {
                     SpecialInstructions.Add("Hold sausage");
@@ -53,8 +67,27 @@ namespace BleakwindBuffet.Data.Entrees
 
         }
 
-        public bool SausageLink, Egg, HashBrowns, Pancake = true;
+        /// <summary>
+        /// Whether or not the entree has SausageLink
+        /// </summary>
+        public bool SausageLink { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Egg
+        /// </summary>
+        public bool Egg { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has HashBrowns
+        /// </summary>
+        public bool HashBrowns { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Pancake
+        /// </summary>
+        public bool Pancake { get; set; } = true;
 
+        /// <summary>
+        /// Returns a description of the entree
+        /// </summary>
+        /// <returns> A string describing the entree</returns>
         public override string ToString()
         {
             return "Smokehouse Skeleton";

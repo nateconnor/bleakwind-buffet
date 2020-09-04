@@ -9,8 +9,14 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class for representing Double Draugr
+    /// </summary>
     public class DoubleDraugr
     {
+        /// <summary>
+        /// The Price of the entree
+        /// </summary>
         public double Price
         {
             get
@@ -19,6 +25,9 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// The calories of the entree
+        /// </summary>
         public uint Calories
         {
             get
@@ -27,10 +36,15 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// A list of special insturctions for preparing the entree
+        /// </summary>
         public List<String> SpecialInstructions
         {
             get
             {
+                List<String> SpecialInstructions = new List<String>();
+
                 if (!Bun)
                 {
                     SpecialInstructions.Add("Hold Bun");
@@ -68,8 +82,43 @@ namespace BleakwindBuffet.Data.Entrees
 
         }
 
-        public bool Bun, Ketchup, Mustard, Pickle, Cheese, Tomato, Lettuce, Mayo = true;
+        /// <summary>
+        /// Whether or not the entree has bun
+        /// </summary>
+        public bool Bun { get; set; }  = true;
+        /// <summary>
+        /// Whether or not the entree has Ketchup
+        /// </summary>
+        public bool Ketchup { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Mustard
+        /// </summary>
+        public bool Mustard { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Pickle
+        /// </summary>
+        public bool Pickle { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Cheese
+        /// </summary>
+        public bool Cheese { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Tomato
+        /// </summary>
+        public bool Tomato { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Lettuce
+        /// </summary>
+        public bool Lettuce { get; set; } = true;
+        /// <summary>
+        /// Whether or not the entree has Mayo
+        /// </summary>
+        public bool Mayo { get; set; } = true;
 
+        /// <summary>
+        /// Returns a description of the entree
+        /// </summary>
+        /// <returns> A string describing the entree</returns>
         public override string ToString()
         {
             return "Double Draugr";
