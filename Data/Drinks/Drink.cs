@@ -1,4 +1,9 @@
-﻿using BleakwindBuffet.Data.Enums;
+﻿/*
+* Author: Nathan Connor
+* Class name: Drink.cs
+* Purpose: Drink object constructor for BleakwindBuffet
+*/
+using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
