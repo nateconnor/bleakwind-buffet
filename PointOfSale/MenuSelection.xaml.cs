@@ -86,7 +86,7 @@ namespace PointOfSale
         private void SmokehouseSkeletonClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new SmokehouseSkeleton(parent);
+            parent.menuBorder.Child = new SmokehouseSkeletonOrder(parent);
 
         }
 
@@ -194,7 +194,7 @@ namespace PointOfSale
         private void FriedMiraakClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new FriedMiraak(parent);
+            parent.menuBorder.Child = new FriedMiraakOrder(parent);
 
         }
 

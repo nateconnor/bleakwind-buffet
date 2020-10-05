@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
+
 
 
 namespace BleakwindBuffet.Data.Sides
@@ -63,7 +65,8 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-       
+
+
 
         /// <summary>
         /// Returns a description of the side

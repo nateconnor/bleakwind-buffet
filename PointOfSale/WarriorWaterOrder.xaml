@@ -24,16 +24,17 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <CheckBox Name="uxIce" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" >Ice</CheckBox>
-        <CheckBox Name="uxLemon" Grid.ColumnSpan="2" Grid.Row="2" FontWeight="Bold" FontSize="20" >Lemon</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Ice}" Name="uxIce" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" >Ice</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Lemon}" Name="uxLemon" Grid.ColumnSpan="2" Grid.Row="2" FontWeight="Bold" FontSize="20" >Lemon</CheckBox>
 
         <TextBlock Grid.Row="3" Grid.ColumnSpan="1" FontWeight="Bold" TextAlignment="Left" FontSize="20" >Size</TextBlock>
 
-        <RadioButton FontSize="20"  Grid.ColumnSpan="2" Grid.Row="4">Small</RadioButton>
-        <RadioButton FontSize="20" Grid.ColumnSpan="2" Grid.Row="5">Medium</RadioButton>
-        <RadioButton FontSize="20" Grid.ColumnSpan="2" Grid.Row="6">Large</RadioButton>
+        <RadioButton Checked="SizeChanges"  Name ="uxSmall"  FontSize="20"  Grid.ColumnSpan="2" Grid.Row="4">Small</RadioButton>
+        <RadioButton  Checked="SizeChanges"  Name ="uxMedium" FontSize="20" Grid.ColumnSpan="2" Grid.Row="5">Medium</RadioButton>
+        <RadioButton Checked="SizeChanges"  Name ="uxLarge" FontSize="20" Grid.ColumnSpan="2" Grid.Row="6">Large</RadioButton>
 
         <TextBlock Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center" FontSize="20" >Customize Warrior Water</TextBlock>
-        <Button Click="backToScreen" Grid.ColumnSpan="2" Grid.Row="20" FontWeight="Bold" FontSize="20">Done</Button>
+        <Button Click="backToScreen" Grid.ColumnSpan="1" Grid.Row="20" FontWeight="Bold" FontSize="20">Cancel</Button>
+        <Button Click="backToScreen" Grid.ColumnSpan="1" Grid.Row="20" Grid.Column="1" FontWeight="Bold" FontSize="20">Done</Button>
     </Grid>
 </UserControl>

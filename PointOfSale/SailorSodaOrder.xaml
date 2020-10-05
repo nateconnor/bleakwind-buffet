@@ -33,16 +33,16 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <CheckBox Name="uxIce" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" >Ice</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Ice}" Name="uxIce" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" >Ice</CheckBox>
         <TextBlock Grid.Row="2" Grid.ColumnSpan="1" FontWeight="Bold" TextAlignment="Left" FontSize="20" >Flavor</TextBlock>
         <GroupBox  Grid.Row="2" Margin="0,32,0,0" Grid.RowSpan="7">
             <StackPanel Margin="10">
-                <RadioButton FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Blackberry</RadioButton>
-                <RadioButton FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Cherry</RadioButton>
-                <RadioButton FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Grapefruit</RadioButton>
-                <RadioButton FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Lemon</RadioButton>
-                <RadioButton FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Peach</RadioButton>
-                <RadioButton FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Watermelon</RadioButton>
+                <RadioButton Checked="FlavorChanges" Name="uxBlackberry" FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Blackberry</RadioButton>
+                <RadioButton Checked="FlavorChanges" Name="uxCherry" FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Cherry</RadioButton>
+                <RadioButton Checked="FlavorChanges" Name="uxGrapefruit" FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Grapefruit</RadioButton>
+                <RadioButton Checked="FlavorChanges" Name="uxLemon" FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Lemon</RadioButton>
+                <RadioButton Checked="FlavorChanges" Name="uxPeach" FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Peach</RadioButton>
+                <RadioButton Checked="FlavorChanges" Name="uxWatermelon" FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Watermelon</RadioButton>
 
 
             </StackPanel>
@@ -52,11 +52,12 @@
 
         <TextBlock Grid.Row="9" Grid.ColumnSpan="1" FontWeight="Bold" TextAlignment="Left" FontSize="20" >Size</TextBlock>
 
-        <RadioButton FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Small</RadioButton>
-        <RadioButton FontSize="20" Grid.ColumnSpan="2" Grid.Row="11">Medium</RadioButton>
-        <RadioButton FontSize="20" Grid.ColumnSpan="2" Grid.Row="12">Large</RadioButton>
+        <RadioButton Checked="SizeChanges" Name ="uxSmall"  FontSize="20"  Grid.ColumnSpan="2" Grid.Row="10">Small</RadioButton>
+        <RadioButton Checked="SizeChanges" Name ="uxMedium"  FontSize="20" Grid.ColumnSpan="2" Grid.Row="11">Medium</RadioButton>
+        <RadioButton Checked="SizeChanges" Name="uxLarge" FontSize="20" Grid.ColumnSpan="2" Grid.Row="12">Large</RadioButton>
 
         <TextBlock Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center" FontSize="20" >Customize Sailor Soda</TextBlock>
-        <Button Click="backToScreen" Grid.ColumnSpan="2" Grid.Row="20" FontWeight="Bold" FontSize="20">Done</Button>
+        <Button Click="backToScreen" Grid.ColumnSpan="1" Grid.Row="20" FontWeight="Bold" FontSize="20">Cancel</Button>
+        <Button Click="backToScreen" Grid.ColumnSpan="1" Grid.Row="20" Grid.Column="1" FontWeight="Bold" FontSize="20">Done</Button>
     </Grid>
 </UserControl>

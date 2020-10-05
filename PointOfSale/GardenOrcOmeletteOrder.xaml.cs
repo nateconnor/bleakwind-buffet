@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Entrees;
 
 namespace PointOfSale
 {
@@ -24,10 +25,12 @@ namespace PointOfSale
     public partial class GardenOrcOmeletteOrder : UserControl
     {
         Order parent;
+        private GardenOrcOmelette orc = new GardenOrcOmelette();
         public GardenOrcOmeletteOrder(Order p)
         {
             InitializeComponent();
             parent = p;
+            DataContext = orc;
         }
 
         /// <summary>

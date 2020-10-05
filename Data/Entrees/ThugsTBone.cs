@@ -6,6 +6,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace BleakwindBuffet.Data.Entrees
 {
@@ -47,6 +49,7 @@ namespace BleakwindBuffet.Data.Entrees
                 return SpecialInstructions;
             }
         }
+
 
 
         /// <summary>

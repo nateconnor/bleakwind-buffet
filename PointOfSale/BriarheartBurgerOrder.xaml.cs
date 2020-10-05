@@ -15,21 +15,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Entrees;
+
 
 namespace PointOfSale
 {
+    
     /// <summary>
     /// Interaction logic for BriarheartBurgerOrder.xaml
     /// </summary>
     public partial class BriarheartBurgerOrder : UserControl
     {
-
+        private BriarheartBurger burger = new BriarheartBurger();
         Order parent;
 
         public BriarheartBurgerOrder(Order menu)
         {
             InitializeComponent();
             parent = menu;
+            DataContext = burger;
             
         }
 

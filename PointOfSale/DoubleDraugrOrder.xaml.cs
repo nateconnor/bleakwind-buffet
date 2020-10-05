@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Entrees;
 
 namespace PointOfSale
 {
@@ -24,10 +25,12 @@ namespace PointOfSale
     public partial class DoubleDraugrOrder : UserControl
     {
         Order parent;
+        DoubleDraugr dd = new DoubleDraugr();
         public DoubleDraugrOrder(Order p)
         {
             InitializeComponent();
             parent = p;
+            DataContext = dd;
         }
 
         /// <summary>

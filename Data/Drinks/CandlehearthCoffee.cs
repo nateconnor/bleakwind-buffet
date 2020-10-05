@@ -5,6 +5,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
@@ -51,21 +52,50 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-       
 
 
+        private bool _ice = false;
+        private bool _cream = false;
+        private bool _decaf = false;
         /// <summary>
         /// Whether or not the drink has ice
         /// </summary>
-        public bool Ice { get; set; } = false;
+        public bool Ice
+        {
+            get => _ice;
+            set
+            {
+                _ice = value;
+                InvokePropertyChanged("Ice");
+            }
+
+        }
         /// <summary>
         /// Whether or not the drink has cream
         /// </summary>
-        public bool  RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get => _cream;
+            set
+            {
+                _cream = value;
+                InvokePropertyChanged("RoomForCream");
+            }
+
+        }
         /// <summary>
         /// Whether or not the drink is decaf
         /// </summary>
-        public bool  Decaf { get; set; }  = false;
+        public bool Decaf
+        {
+            get => _decaf;
+            set
+            {
+                _decaf = value;
+                InvokePropertyChanged("Decaf");
+            }
+
+        }
 
         /// <summary>
         /// A list of special insturctions for preparing the drink
@@ -89,6 +119,7 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
 
+        
         /// <summary>
         /// Returns a description of the drink
         /// </summary>
@@ -99,7 +130,7 @@ namespace BleakwindBuffet.Data.Drinks
             return $"{Size} Candlehearth Coffee";
             else
                 return $"{Size} Decaf Candlehearth Coffee";
-
+            
         }
     }
 }

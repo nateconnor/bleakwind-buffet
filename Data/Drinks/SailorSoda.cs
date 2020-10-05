@@ -7,6 +7,8 @@ using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace BleakwindBuffet.Data.Drinks
 {
@@ -50,20 +52,36 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        
 
+        private SodaFlavor _flavor = SodaFlavor.Cherry;
         /// <summary>
         /// The flavor of the drink
         /// </summary>
         public SodaFlavor Flavor
         {
-            get; set;
-        } = SodaFlavor.Cherry;
+            get => _flavor;
+            set
+            {
+                _flavor = value;
+                InvokePropertyChanged("Flavor");
+            }
 
+        }
+
+        private bool _ice = true;
         /// <summary>
         /// Whether or not the drink has ice
         /// </summary>
-        public bool Ice { get; set; } =  true;
+        public bool Ice
+        {
+            get => _ice;
+            set
+            {
+                _ice = value;
+                InvokePropertyChanged("Ice");
+            }
+
+        }
 
         /// <summary>
         /// A list of special insturctions for preparing the drink
@@ -81,6 +99,7 @@ namespace BleakwindBuffet.Data.Drinks
                 return SpecialInstructions;
             }
         }
+
 
 
         /// <summary>

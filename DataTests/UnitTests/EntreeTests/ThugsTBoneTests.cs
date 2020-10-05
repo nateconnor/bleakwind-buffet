@@ -8,6 +8,8 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System;
+using System.ComponentModel;
+
 
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
@@ -55,5 +57,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             ThugsTBone tbone = new ThugsTBone();
             Assert.Equal("Thugs T-Bone", tbone.ToString());
         }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            ThugsTBone entree = new ThugsTBone();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(entree);
+        }
+
+       
     }
 }

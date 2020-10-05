@@ -3,6 +3,7 @@
 * Class name: CandlehearthCoffee.xaml.cs
 * Purpose: Controls the screen to finalize this order
 */
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Size = BleakwindBuffet.Data.Enums.Size;
+
 
 namespace PointOfSale
 {
@@ -24,11 +27,12 @@ namespace PointOfSale
     public partial class CandlehearthCoffeeOrder : UserControl
     {
         Order parent;
-
+        private CandlehearthCoffee cc = new CandlehearthCoffee();
         public CandlehearthCoffeeOrder(Order menu)
         {
             InitializeComponent();
             parent = menu;
+            DataContext = cc;
 
         }
 
@@ -41,6 +45,20 @@ namespace PointOfSale
         {
             parent.menuBorder.Child = new MenuSelection(parent);
 
+        }
+
+        void SizeChanges(object sender, RoutedEventArgs e)
+        {
+            if ((bool)uxSmall.IsChecked)
+            {
+                cc.Size = Size.Small;
+            }
+            else if ((bool)uxMedium.IsChecked)
+            {
+                cc.Size = Size.Medium;
+            }
+            else if ((bool)uxLarge.IsChecked)
+                cc.Size = Size.Large;
         }
     }
 }

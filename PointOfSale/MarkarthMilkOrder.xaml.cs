@@ -3,6 +3,7 @@
 * Class name: MarkarthMilk.xaml.cs
 * Purpose: Controls the screen to finalize this order
 */
+using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Size = BleakwindBuffet.Data.Enums.Size;
+
 
 namespace PointOfSale
 {
@@ -24,11 +27,12 @@ namespace PointOfSale
     public partial class MarkarthMilkOrder : UserControl
     {
         Order parent;
-
+        private MarkarthMilk mm = new MarkarthMilk();
         public MarkarthMilkOrder(Order menu)
         {
             InitializeComponent();
             parent = menu;
+            DataContext = mm;
 
         }
 
@@ -41,6 +45,20 @@ namespace PointOfSale
         {
             parent.menuBorder.Child = new MenuSelection(parent);
 
+        }
+
+        void SizeChanges(object sender, RoutedEventArgs e)
+        {
+            if ((bool)uxSmall.IsChecked)
+            {
+                mm.Size = Size.Small;
+            }
+            else if ((bool)uxMedium.IsChecked)
+            {
+                mm.Size = Size.Medium;
+            }
+            else if ((bool)uxLarge.IsChecked)
+                mm.Size = Size.Large;
         }
     }
 }

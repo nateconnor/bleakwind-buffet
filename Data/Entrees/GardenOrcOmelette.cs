@@ -6,13 +6,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class for representing Garden Orc Omelette
     /// </summary>
-    public class GardenOrcOmelette : Entree, IOrderItem
+    public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// The Price of the entree
@@ -66,22 +68,66 @@ namespace BleakwindBuffet.Data.Entrees
 
         }
 
+        private bool _broccoli = true;
+        private bool _mushrooms = true;
+
+        private bool _tomato = true;
+        private bool _cheddar = true;
+
+
         /// <summary>
         /// Whether or not the entree has Broccoli
         /// </summary>
-        public bool Broccoli { get; set; }= true;
+        public bool Broccoli
+        {
+            get => _broccoli;
+            set
+            {
+                _broccoli = value;
+                InvokePropertyChanged("Broccoli");
+            }
+
+        }
         /// <summary>
         /// Whether or not the entree has Mushrooms
         /// </summary>
-        public bool Mushrooms { get; set; } = true;
+        public bool Mushrooms
+        {
+            get => _mushrooms;
+            set
+            {
+                _mushrooms = value;
+                InvokePropertyChanged("Mushrooms");
+            }
+
+        }
         /// <summary>
         /// Whether or not the entree has Tomato
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get => _tomato;
+            set
+            {
+                _tomato = value;
+                InvokePropertyChanged("Tomato");
+            }
+
+        }
         /// <summary>
         /// Whether or not the entree has Cheddar
         /// </summary>
-        public bool Cheddar { get; set; } = true;
+        public bool Cheddar
+        {
+            get => _cheddar;
+            set
+            {
+                _cheddar = value;
+                InvokePropertyChanged("Cheddar");
+            }
+
+        }
+
 
         /// <summary>
         /// Returns a description of the entree

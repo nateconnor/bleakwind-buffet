@@ -8,6 +8,8 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
+using System.ComponentModel;
+
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -26,6 +28,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             AretinoAppleJuice aj = new AretinoAppleJuice();
             Assert.IsAssignableFrom<IOrderItem>(aj);
         }
+
+        
 
         [Fact]
         public void ShouldNotIncludeIceByDefault()
@@ -50,6 +54,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             aj.Ice = false;
             Assert.False(aj.Ice);
         }
+
+        
 
         [Fact]
         public void ShouldBeAbleToSetSize()
@@ -112,6 +118,50 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             AretinoAppleJuice aj = new AretinoAppleJuice();
             aj.Size = size;
             Assert.Equal(name, aj.ToString());
+        }
+
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(aj);
+        }
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var aj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aj, "Ice", () =>
+            {
+                aj.Ice = true;
+            });
+
+            Assert.PropertyChanged(aj, "Ice", () =>
+            {
+                aj.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            var drink = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(drink, "Size", () =>
+            {
+                drink.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(drink, "Size", () =>
+            {
+                drink.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(drink, "Size", () =>
+            {
+                drink.Size = Size.Large;
+            });
         }
     }
 }

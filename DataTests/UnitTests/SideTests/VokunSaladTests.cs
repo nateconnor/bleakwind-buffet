@@ -86,5 +86,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             salad.Size = size;
             Assert.Equal(name, salad.ToString());
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            VokunSalad side = new VokunSalad();
+
+            Assert.PropertyChanged(side, "Size", () =>
+            {
+                side.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(side, "Size", () =>
+            {
+                side.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(side, "Size", () =>
+            {
+                side.Size = Size.Large;
+            });
+        }
     }
 }

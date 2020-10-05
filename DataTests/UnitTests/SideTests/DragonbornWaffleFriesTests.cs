@@ -86,5 +86,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             fries.Size = size;
             Assert.Equal(name, fries.ToString());
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            DragonbornWaffleFries side = new DragonbornWaffleFries();
+
+            Assert.PropertyChanged(side, "Size", () =>
+            {
+                side.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(side, "Size", () =>
+            {
+                side.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(side, "Size", () =>
+            {
+                side.Size = Size.Large;
+            });
+        }
     }
 }

@@ -3,6 +3,7 @@
 * Class name: ThalmorTripleOrder.xaml.cs
 * Purpose: Controls the screen to finalize this order
 */
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,10 +25,12 @@ namespace PointOfSale
     public partial class ThalmorTripleOrder : UserControl
     {
         Order parent;
+        private ThalmorTriple tt = new ThalmorTriple();
         public ThalmorTripleOrder(Order p)
         {
             InitializeComponent();
             parent = p;
+            DataContext = tt;
         }
 
 

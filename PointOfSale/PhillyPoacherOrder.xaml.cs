@@ -3,6 +3,7 @@
 * Class name: PhillyPoacher.xaml.cs
 * Purpose: Controls the screen to finalize this order
 */
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,10 +25,13 @@ namespace PointOfSale
     public partial class PhillyPoacherOrder : UserControl
     {
         Order parent;
+        private PhillyPoacher pp = new PhillyPoacher();
+
         public PhillyPoacherOrder(Order p)
         {
             InitializeComponent();
             parent = p;
+            DataContext = pp;
         }
 
 

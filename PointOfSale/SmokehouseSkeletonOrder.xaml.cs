@@ -3,6 +3,7 @@
 * Class name: SmokehouseSkeleton.xaml.cs
 * Purpose: Controls the screen to finalize this order
 */
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,14 +22,16 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for SmokehouseSkeleton.xaml
     /// </summary>
-    public partial class SmokehouseSkeleton : UserControl
+    public partial class SmokehouseSkeletonOrder : UserControl
     {
         Order parent;
+        private SmokehouseSkeleton ss = new SmokehouseSkeleton();
 
-        public SmokehouseSkeleton(Order menu)
+        public SmokehouseSkeletonOrder(Order menu)
         {
             InitializeComponent();
             parent = menu;
+            DataContext = ss;
 
         }
 

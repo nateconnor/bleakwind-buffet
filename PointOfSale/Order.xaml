@@ -36,6 +36,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="1" FontWeight="Bold" TextAlignment="Center" FontSize="20">
             Order
@@ -49,7 +50,7 @@
         <TextBlock Grid.Row="4" Grid.Column="1"  TextAlignment="Center" FontSize="15">
             Total:
         </TextBlock>
-
+        <Button Grid.Row="5" Grid.Column="1" FontWeight="Bold" FontSize="20">Finish Order</Button>
         <Border Name ="menuBorder" Grid.RowSpan="5"></Border>
     </Grid>
     

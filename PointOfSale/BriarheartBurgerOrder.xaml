@@ -23,16 +23,18 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <CheckBox Name="uxBun" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" >Bun</CheckBox>
-        <CheckBox Name="uxKetchup" Grid.ColumnSpan="2" Grid.Row="2" FontWeight="Bold" FontSize="20" >Ketchup</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Bun}" Name="uxBun" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" >
+            Bun</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Ketchup}" Name="uxKetchup" Grid.ColumnSpan="2" Grid.Row="2" FontWeight="Bold" FontSize="20" >Ketchup</CheckBox>
 
-        <CheckBox Name="uxMustard" Grid.ColumnSpan="2" Grid.Row="3" FontWeight="Bold" FontSize="20" >Mustard</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Mustard}" Name="uxMustard" Grid.ColumnSpan="2" Grid.Row="3" FontWeight="Bold" FontSize="20" >Mustard</CheckBox>
 
-        <CheckBox Name="uxPickle" Grid.ColumnSpan="2" Grid.Row="4" FontWeight="Bold" FontSize="20" >Pickle</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Pickle}" Name="uxPickle" Grid.ColumnSpan="2" Grid.Row="4" FontWeight="Bold" FontSize="20" >Pickle</CheckBox>
 
-        <CheckBox Name="uxCheese" Grid.ColumnSpan="2" Grid.Row="5" FontWeight="Bold" FontSize="20" >Cheese</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Cheese}" Name="uxCheese" Grid.ColumnSpan="2" Grid.Row="5" FontWeight="Bold" FontSize="20" >Cheese</CheckBox>
 
         <TextBlock Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center" FontSize="20" >Customize Briarheart Burger</TextBlock>
-        <Button Click="backToScreen" Grid.ColumnSpan="2" Grid.Row="6" FontWeight="Bold" FontSize="20">Done</Button>
+        <Button Click="backToScreen" Grid.ColumnSpan="1" Grid.Row="20" FontWeight="Bold" FontSize="20">Cancel</Button>
+        <Button Click="backToScreen" Grid.ColumnSpan="1" Grid.Row="20" Grid.Column="1" FontWeight="Bold" FontSize="20">Done</Button>
     </Grid>
 </UserControl>

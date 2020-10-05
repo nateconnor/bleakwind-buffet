@@ -22,13 +22,14 @@
             <RowDefinition/>
            
         </Grid.RowDefinitions>
-        <CheckBox Name="uxSirloin" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" >Sirloin</CheckBox>
-        <CheckBox Name="uxOnions" Grid.ColumnSpan="2" Grid.Row="2" FontWeight="Bold" FontSize="20" >Onions</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Sirloin}" Name="uxSirloin" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" >Sirloin</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Onion}" Name="uxOnions" Grid.ColumnSpan="2" Grid.Row="2" FontWeight="Bold" FontSize="20" >Onions</CheckBox>
 
-        <CheckBox Name="uxRoll" Grid.ColumnSpan="2" Grid.Row="3" FontWeight="Bold" FontSize="20" >Roll</CheckBox>
+        <CheckBox IsChecked="{Binding Path= Roll}" Name="uxRoll" Grid.ColumnSpan="2" Grid.Row="3" FontWeight="Bold" FontSize="20" >Roll</CheckBox>
 
         
         <TextBlock Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center" FontSize="20" >Customize Philly Poacher</TextBlock>
-        <Button Click="backToScreen" Grid.ColumnSpan="2" Grid.Row="6" FontWeight="Bold" FontSize="20">Done</Button>
+        <Button Click="backToScreen" Grid.ColumnSpan="1" Grid.Row="20" FontWeight="Bold" FontSize="20">Cancel</Button>
+        <Button Click="backToScreen" Grid.ColumnSpan="1" Grid.Row="20" Grid.Column="1" FontWeight="Bold" FontSize="20">Done</Button>
     </Grid>
 </UserControl>

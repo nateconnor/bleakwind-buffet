@@ -23,14 +23,16 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <CheckBox Name="uxIce" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" >Ice</CheckBox>
+        <CheckBox  Name="uxIce" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" IsChecked="{Binding Path= Ice}">Ice</CheckBox>
         <TextBlock Grid.Row="2" Grid.ColumnSpan="1" FontWeight="Bold" TextAlignment="Left" FontSize="20" >Size</TextBlock>
 
-        <RadioButton FontSize="20"  Grid.ColumnSpan="2" Grid.Row="3">Small</RadioButton>
-        <RadioButton FontSize="20" Grid.ColumnSpan="2" Grid.Row="4">Medium</RadioButton>
-        <RadioButton FontSize="20" Grid.ColumnSpan="2" Grid.Row="5">Large</RadioButton>
+        <RadioButton  Name="uxSmall" Checked="SizeChanges" FontSize="20"  Grid.ColumnSpan="2" Grid.Row="3">Small</RadioButton>
+        <RadioButton  Name="uxMedium" Checked="SizeChanges" FontSize="20" Grid.ColumnSpan="2" Grid.Row="4">Medium</RadioButton>
+        <RadioButton  Name="uxLarge" Checked="SizeChanges" FontSize="20" Grid.ColumnSpan="2" Grid.Row="5">Large</RadioButton>
 
         <TextBlock Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center" FontSize="20" >Customize Aretino Apple Juice</TextBlock>
-        <Button Click="backToScreen" Grid.ColumnSpan="2" Grid.Row="6" FontWeight="Bold" FontSize="20">Done</Button>
+        <Button Click="backToScreen" Grid.ColumnSpan="1" Grid.Row="6" FontWeight="Bold" FontSize="20">Cancel</Button>
+        <Button Click="backToScreen" Grid.ColumnSpan="1" Grid.Row="6" Grid.Column="1" FontWeight="Bold" FontSize="20">Done</Button>
+
     </Grid>
 </UserControl>

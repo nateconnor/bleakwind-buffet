@@ -9,6 +9,7 @@ using System.Text;
 using BleakwindBuffet.Data.Enums;
 
 
+
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
@@ -51,12 +52,21 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-      
 
+        private bool _ice = false;
         /// <summary>
         /// Whether or not the drink has ice
         /// </summary>
-        public bool Ice { get; set; } = false;
+        public bool Ice
+        {
+            get => _ice;
+            set
+            {
+                _ice = value;
+                InvokePropertyChanged("Ice");
+            }
+
+        }
 
         /// <summary>
         /// A list of special insturctions for preparing the drink
@@ -74,6 +84,7 @@ namespace BleakwindBuffet.Data.Drinks
                 return SpecialInstructions;
             }
         }
+
 
 
         /// <summary>

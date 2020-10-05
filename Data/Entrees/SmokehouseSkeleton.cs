@@ -6,6 +6,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace BleakwindBuffet.Data.Entrees
 {
@@ -66,23 +68,66 @@ namespace BleakwindBuffet.Data.Entrees
             }
 
         }
+        private bool _sausage = true;
+        private bool _egg = true;
+
+        private bool _hash = true;
+
+        private bool _pancake = true;
 
         /// <summary>
         /// Whether or not the entree has SausageLink
         /// </summary>
-        public bool SausageLink { get; set; } = true;
+        public bool SausageLink
+        {
+            get => _sausage;
+            set
+            {
+                _sausage = value;
+                InvokePropertyChanged("SausageLink");
+            }
+
+        }
         /// <summary>
         /// Whether or not the entree has Egg
         /// </summary>
-        public bool Egg { get; set; } = true;
+        public bool Egg
+        {
+            get => _egg;
+            set
+            {
+                _egg = value;
+                InvokePropertyChanged("Egg");
+            }
+
+        }
         /// <summary>
         /// Whether or not the entree has HashBrowns
         /// </summary>
-        public bool HashBrowns { get; set; } = true;
+        public bool HashBrowns
+        {
+            get => _hash;
+            set
+            {
+                _hash = value;
+                InvokePropertyChanged("HashBrowns");
+            }
+
+        }
         /// <summary>
         /// Whether or not the entree has Pancake
         /// </summary>
-        public bool Pancake { get; set; } = true;
+        public bool Pancake
+        {
+            get => _pancake;
+            set
+            {
+                _pancake = value;
+                InvokePropertyChanged("Pancake");
+            }
+
+        }
+
 
         /// <summary>
         /// Returns a description of the entree

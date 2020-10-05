@@ -3,6 +3,7 @@
 * Class name: ThalmorTripleOrder.xaml.cs
 * Purpose: Controls the screen to finalize this order
 */
+using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Size = BleakwindBuffet.Data.Enums.Size;
+
 
 namespace PointOfSale
 {
@@ -25,10 +28,12 @@ namespace PointOfSale
     {
         Order parent;
 
+        private VokunSalad vokun = new VokunSalad();
         public VokunSaladOrder(Order menu)
         {
             InitializeComponent();
             parent = menu;
+            DataContext = vokun;
 
         }
 
@@ -42,6 +47,19 @@ namespace PointOfSale
         {
             parent.menuBorder.Child = new MenuSelection(parent);
 
+        }
+        void SizeChanges(object sender, RoutedEventArgs e)
+        {
+            if ((bool)uxSmall.IsChecked)
+            {
+                vokun.Size = Size.Small;
+            }
+            else if ((bool)uxMedium.IsChecked)
+            {
+                vokun.Size = Size.Medium;
+            }
+            else if ((bool)uxLarge.IsChecked)
+                vokun.Size = Size.Large;
         }
     }
 }

@@ -8,6 +8,8 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System;
+using System.ComponentModel;
+
 
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
@@ -133,6 +135,58 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             PhillyPoacher pp = new PhillyPoacher();
             Assert.Equal("Philly Poacher", pp.ToString());
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            PhillyPoacher entree = new PhillyPoacher();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(entree);
+        }
+
+        [Fact]
+        public void ChangingSirloinNotifiesSirloinProperty()
+        {
+            var entree = new PhillyPoacher();
+            Assert.PropertyChanged(entree, "Sirloin", () =>
+            {
+                entree.Sirloin = true;
+            });
+
+            Assert.PropertyChanged(entree, "Sirloin", () =>
+            {
+                entree.Sirloin = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingOnionNotifiesOnionProperty()
+        {
+            var entree = new PhillyPoacher();
+            Assert.PropertyChanged(entree, "Onion", () =>
+            {
+                entree.Onion = true;
+            });
+
+            Assert.PropertyChanged(entree, "Onion", () =>
+            {
+                entree.Onion = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingRollNotifiesRollProperty()
+        {
+            var entree = new PhillyPoacher();
+            Assert.PropertyChanged(entree, "Roll", () =>
+            {
+                entree.Roll = true;
+            });
+
+            Assert.PropertyChanged(entree, "Roll", () =>
+            {
+                entree.Roll = false;
+            });
         }
     }
 }

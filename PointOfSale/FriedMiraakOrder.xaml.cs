@@ -3,6 +3,7 @@
 * Class name: FriedMiraak.xaml.cs
 * Purpose: Controls the screen to finalize this order
 */
+using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,20 +16,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Size = BleakwindBuffet.Data.Enums.Size;
+
 
 namespace PointOfSale
 {
     /// <summary>
     /// Interaction logic for FriedMiraak.xaml
     /// </summary>
-    public partial class FriedMiraak : UserControl
+    public partial class FriedMiraakOrder : UserControl
     {
         Order parent;
 
-        public FriedMiraak(Order menu)
+        private FriedMiraak fm= new FriedMiraak();
+        public FriedMiraakOrder(Order menu)
         {
             InitializeComponent();
             parent = menu;
+            DataContext = fm;
 
         }
 
@@ -41,6 +46,20 @@ namespace PointOfSale
         {
             parent.menuBorder.Child = new MenuSelection(parent);
 
+        }
+
+        void SizeChanges(object sender, RoutedEventArgs e)
+        {
+            if ((bool)uxSmall.IsChecked)
+            {
+                fm.Size = Size.Small;
+            }
+            else if ((bool)uxMedium.IsChecked)
+            {
+                fm.Size = Size.Medium;
+            }
+            else if ((bool)uxLarge.IsChecked)
+                fm.Size = Size.Large;
         }
     }
 }
