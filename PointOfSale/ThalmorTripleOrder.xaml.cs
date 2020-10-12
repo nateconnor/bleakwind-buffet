@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -24,9 +25,9 @@ namespace PointOfSale
     /// </summary>
     public partial class ThalmorTripleOrder : UserControl
     {
-        Order parent;
-        private ThalmorTriple tt = new ThalmorTriple();
-        public ThalmorTripleOrder(Order p)
+        OrderMenu parent;
+        //private ThalmorTriple tt = new ThalmorTriple();
+        public ThalmorTripleOrder(OrderMenu p, ThalmorTriple tt)
         {
             InitializeComponent();
             parent = p;
@@ -41,7 +42,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+            //parent.menuBorder.Child = new MenuSelection(parent);
 
         }
     }

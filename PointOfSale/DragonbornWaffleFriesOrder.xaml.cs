@@ -4,6 +4,8 @@
 * Purpose: Controls the screen to finalize this order
 */
 using BleakwindBuffet.Data.Sides;
+using BleakwindBuffet.Data;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,12 +28,13 @@ namespace PointOfSale
     /// </summary>
     public partial class DragonbornWaffleFriesOrder : UserControl
     {
-        Order parent;
-        private DragonbornWaffleFries dw = new DragonbornWaffleFries();
-        public DragonbornWaffleFriesOrder(Order menu)
+        OrderMenu parent;
+        private DragonbornWaffleFries dw;
+        public DragonbornWaffleFriesOrder(OrderMenu menu, DragonbornWaffleFries d)
         {
             InitializeComponent();
             parent = menu;
+            dw = d;
             DataContext = dw;
         }
 
@@ -42,7 +45,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+            //parent.menuBorder.Child = new MenuSelection(parent);
 
         }
 

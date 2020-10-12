@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nathan Connor
+* Class name: MenuTests.cs
+* Purpose: tests the entire menu of buffet
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;

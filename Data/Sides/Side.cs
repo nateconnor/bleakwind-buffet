@@ -32,8 +32,18 @@ namespace BleakwindBuffet.Data.Sides
                 InvokePropertyChanged("Price");
                 InvokePropertyChanged("Calories");
 
+                InvokePropertyChanged("FullString");
 
 
+
+            }
+        }
+
+        public virtual string FullString
+        {
+            get
+            {
+                return this.ToString();
             }
         }
         /// <summary>

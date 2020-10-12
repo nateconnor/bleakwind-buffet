@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Size = BleakwindBuffet.Data.Enums.Size;
+using BleakwindBuffet.Data;
 
 
 namespace PointOfSale
@@ -26,13 +27,14 @@ namespace PointOfSale
     /// </summary>
     public partial class VokunSaladOrder : UserControl
     {
-        Order parent;
+        OrderMenu parent;
 
-        private VokunSalad vokun = new VokunSalad();
-        public VokunSaladOrder(Order menu)
+        private VokunSalad vokun;
+        public VokunSaladOrder(OrderMenu menu, VokunSalad vok)
         {
             InitializeComponent();
             parent = menu;
+            vokun = vok;
             DataContext = vokun;
 
         }
@@ -45,9 +47,14 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+           // parent.menuBorder.Child = new MenuSelection(parent);
 
         }
+
         void SizeChanges(object sender, RoutedEventArgs e)
         {
             if ((bool)uxSmall.IsChecked)

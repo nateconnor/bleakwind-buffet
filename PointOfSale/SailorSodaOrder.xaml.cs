@@ -19,6 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -27,12 +28,13 @@ namespace PointOfSale
     /// </summary>
     public partial class SailorSodaOrder : UserControl
     {
-        Order parent;
-        private SailorSoda soda = new SailorSoda();
-        public SailorSodaOrder(Order menu)
+        OrderMenu parent;
+        private SailorSoda soda;
+        public SailorSodaOrder(OrderMenu menu, SailorSoda s)
         {
             InitializeComponent();
             parent = menu;
+            soda = s;
             DataContext = soda;
 
         }
@@ -44,7 +46,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+           // parent.menuBorder.Child = new MenuSelection(parent);
 
         }
 

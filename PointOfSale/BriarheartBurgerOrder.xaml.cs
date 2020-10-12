@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data;
 
 
 namespace PointOfSale
@@ -26,10 +27,10 @@ namespace PointOfSale
     /// </summary>
     public partial class BriarheartBurgerOrder : UserControl
     {
-        private BriarheartBurger burger = new BriarheartBurger();
-        Order parent;
+        //private BriarheartBurger burger = new BriarheartBurger();
+        OrderMenu parent;
 
-        public BriarheartBurgerOrder(Order menu)
+        public BriarheartBurgerOrder(OrderMenu menu, BriarheartBurger burger)
         {
             InitializeComponent();
             parent = menu;
@@ -44,8 +45,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+           
+
+
             
+
         }
     }
 }

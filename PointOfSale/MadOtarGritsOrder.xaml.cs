@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Size = BleakwindBuffet.Data.Enums.Size;
+using BleakwindBuffet.Data;
 
 
 namespace PointOfSale
@@ -26,13 +27,14 @@ namespace PointOfSale
     /// </summary>
     public partial class MadOtarGritsOrder : UserControl
     {
-        Order parent;
+        OrderMenu parent;
 
-        private MadOtarGrits grits = new MadOtarGrits();
-        public MadOtarGritsOrder(Order menu)
+        private MadOtarGrits grits;
+        public MadOtarGritsOrder(OrderMenu menu, MadOtarGrits mog)
         {
             InitializeComponent();
             parent = menu;
+            grits = mog;
             DataContext = grits;
 
         }
@@ -44,7 +46,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+            //parent.menuBorder.Child = new MenuSelection(parent);
 
         }
 

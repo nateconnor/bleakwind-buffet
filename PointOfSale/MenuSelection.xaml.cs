@@ -3,6 +3,11 @@
 * Class name: MenuSelection.xaml.cs
 * Purpose: Controls the buttons for every menu item in GUI
 */
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Sides;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,8 +28,8 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuSelection : UserControl
     {
-         Order parent;
-        public MenuSelection(Order p)
+        OrderMenu parent;
+        public MenuSelection(OrderMenu p)
         {
             InitializeComponent();
             parent = p;
@@ -37,9 +42,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void BriarheartBurgerClick(object sender, RoutedEventArgs e)
         {
-            
-            parent.menuBorder.Child = new BriarheartBurgerOrder(parent);
-            
+            BriarheartBurgerOrder item = new BriarheartBurgerOrder(parent, new BriarheartBurger());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
+
+            o.Add((IOrderItem)item.DataContext);
+            //parent.menuBorder.Child = new MenuSelection(parent);
+
         }
 
         /// <summary>
@@ -49,8 +58,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void DoubleDraugrClick(object sender, RoutedEventArgs e)
         {
+           DoubleDraugrOrder item = new DoubleDraugrOrder(parent, new DoubleDraugr());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
 
-            parent.menuBorder.Child = new DoubleDraugrOrder(parent);
+            o.Add((IOrderItem)item.DataContext);
 
         }
 
@@ -62,7 +74,11 @@ namespace PointOfSale
         private void GardenOrcOmeletteClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new GardenOrcOmeletteOrder(parent);
+            GardenOrcOmeletteOrder item = new GardenOrcOmeletteOrder(parent, new GardenOrcOmelette());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
+
+            o.Add((IOrderItem)item.DataContext);
 
         }
 
@@ -74,7 +90,11 @@ namespace PointOfSale
         private void PhillyPoacherClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new PhillyPoacherOrder(parent);
+            PhillyPoacherOrder item = new PhillyPoacherOrder(parent, new PhillyPoacher());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
+
+            o.Add((IOrderItem)item.DataContext);
 
         }
 
@@ -86,7 +106,11 @@ namespace PointOfSale
         private void SmokehouseSkeletonClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new SmokehouseSkeletonOrder(parent);
+            SmokehouseSkeletonOrder item = new SmokehouseSkeletonOrder(parent, new SmokehouseSkeleton());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
+
+            o.Add((IOrderItem)item.DataContext);
 
         }
 
@@ -98,7 +122,11 @@ namespace PointOfSale
         private void ThalmorTripleClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new ThalmorTripleOrder(parent);
+            ThalmorTripleOrder item = new ThalmorTripleOrder(parent, new ThalmorTriple());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
+
+            o.Add((IOrderItem)item.DataContext);
 
         }
 
@@ -110,7 +138,11 @@ namespace PointOfSale
         private void ThugsTBoneClick(object sender, RoutedEventArgs e)
         {
 
-            //parent.menuBorder.Child = new BriarheartBurgerOrder(parent);
+            //DoubleDraugrOrder item = new DoubleDraugrOrder(parent, new DoubleDraugr());
+            //parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
+
+            o.Add(new ThugsTBone());
 
         }
 
@@ -122,7 +154,14 @@ namespace PointOfSale
         private void AretinoAppleJuiceClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new AretinoAppleJuiceOrder(parent);
+            AretinoAppleJuiceOrder item = new AretinoAppleJuiceOrder(parent, new AretinoAppleJuice());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
+
+            o.Add((IOrderItem)item.DataContext);
+
+            //parent.menuBorder.Child = new AretinoAppleJuiceOrder(parent);
+            
 
         }
 
@@ -134,8 +173,11 @@ namespace PointOfSale
         private void CandlehearthCoffeeClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new CandlehearthCoffeeOrder(parent);
+            CandlehearthCoffeeOrder item = new CandlehearthCoffeeOrder(parent, new CandlehearthCoffee());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
 
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -146,8 +188,11 @@ namespace PointOfSale
         private void MarkarthMilkClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new MarkarthMilkOrder(parent);
+            MarkarthMilkOrder item = new MarkarthMilkOrder(parent, new MarkarthMilk());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
 
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -158,8 +203,11 @@ namespace PointOfSale
         private void WarriorWaterClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new WarriorWaterOrder(parent);
+            WarriorWaterOrder item = new WarriorWaterOrder(parent, new WarriorWater());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
 
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -170,8 +218,11 @@ namespace PointOfSale
         private void SailorSodaClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new SailorSodaOrder(parent);
+            SailorSodaOrder item = new SailorSodaOrder(parent, new SailorSoda());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
 
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -182,8 +233,11 @@ namespace PointOfSale
         private void DragonbornWaffleFriesClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new DragonbornWaffleFriesOrder(parent);
+            DragonbornWaffleFriesOrder item = new DragonbornWaffleFriesOrder(parent, new DragonbornWaffleFries());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
 
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -194,7 +248,11 @@ namespace PointOfSale
         private void FriedMiraakClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new FriedMiraakOrder(parent);
+            FriedMiraakOrder item = new FriedMiraakOrder(parent, new FriedMiraak());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
+
+            o.Add((IOrderItem)item.DataContext);
 
         }
 
@@ -206,8 +264,11 @@ namespace PointOfSale
         private void MadOtarGritsClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new MadOtarGritsOrder(parent);
+            MadOtarGritsOrder item = new MadOtarGritsOrder(parent, new MadOtarGrits());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
 
+            o.Add((IOrderItem)item.DataContext);
         }
 
         /// <summary>
@@ -218,8 +279,11 @@ namespace PointOfSale
         private void VokunSaladClick(object sender, RoutedEventArgs e)
         {
 
-            parent.menuBorder.Child = new VokunSaladOrder(parent);
+            VokunSaladOrder item = new VokunSaladOrder(parent, new VokunSalad());
+            parent.menuBorder.Child = item;
+            Order o = (Order)parent.DataContext;
 
+            o.Add((IOrderItem)item.DataContext);
         }
     }
 }

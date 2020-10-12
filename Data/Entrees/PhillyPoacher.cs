@@ -81,6 +81,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _sirloin = value;
                 InvokePropertyChanged("Sirloin");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }
@@ -94,6 +96,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _onion = value;
                 InvokePropertyChanged("Onion");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }
@@ -107,6 +111,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _roll = value;
                 InvokePropertyChanged("Roll");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }

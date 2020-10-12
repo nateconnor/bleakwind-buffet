@@ -4,6 +4,7 @@
 * Purpose: Controls the screen to finalize this order
 */
 using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +18,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Size = BleakwindBuffet.Data.Enums.Size;
+using System.ComponentModel;
+
 
 
 namespace PointOfSale
@@ -26,12 +29,13 @@ namespace PointOfSale
     /// </summary>
     public partial class CandlehearthCoffeeOrder : UserControl
     {
-        Order parent;
-        private CandlehearthCoffee cc = new CandlehearthCoffee();
-        public CandlehearthCoffeeOrder(Order menu)
+        OrderMenu parent;
+        private CandlehearthCoffee cc;
+        public CandlehearthCoffeeOrder(OrderMenu menu, CandlehearthCoffee c)
         {
             InitializeComponent();
             parent = menu;
+            cc = c;
             DataContext = cc;
 
         }
@@ -43,7 +47,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+            
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+           // parent.menuBorder.Child = new MenuSelection(parent);
 
         }
 
@@ -59,6 +67,8 @@ namespace PointOfSale
             }
             else if ((bool)uxLarge.IsChecked)
                 cc.Size = Size.Large;
+
+           
         }
     }
 }

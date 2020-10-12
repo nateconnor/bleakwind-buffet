@@ -85,6 +85,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _sausage = value;
                 InvokePropertyChanged("SausageLink");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }
@@ -98,6 +100,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _egg = value;
                 InvokePropertyChanged("Egg");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }
@@ -111,6 +115,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _hash = value;
                 InvokePropertyChanged("HashBrowns");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }
@@ -124,6 +130,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _pancake = value;
                 InvokePropertyChanged("Pancake");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }

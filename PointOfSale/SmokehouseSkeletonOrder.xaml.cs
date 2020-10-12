@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -24,10 +25,10 @@ namespace PointOfSale
     /// </summary>
     public partial class SmokehouseSkeletonOrder : UserControl
     {
-        Order parent;
-        private SmokehouseSkeleton ss = new SmokehouseSkeleton();
+        OrderMenu parent;
+        //private SmokehouseSkeleton ss = new SmokehouseSkeleton();
 
-        public SmokehouseSkeletonOrder(Order menu)
+        public SmokehouseSkeletonOrder(OrderMenu menu, SmokehouseSkeleton ss)
         {
             InitializeComponent();
             parent = menu;
@@ -43,7 +44,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+            //   parent.menuBorder.Child = new MenuSelection(parent);
 
         }
     }

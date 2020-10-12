@@ -17,7 +17,20 @@ namespace BleakwindBuffet.Data.Drinks
     public class AretinoAppleJuice :  Drink, IOrderItem
     {
 
-      
+        //public override Size Size
+        //{
+        //    get => size;
+        //    set
+        //    {
+        //        size = value;
+        //        InvokePropertyChanged("Size");
+        //        InvokePropertyChanged("Price");
+        //        InvokePropertyChanged("Calories");
+
+
+
+        //    }
+        //}
 
         /// <summary>
         /// The Price of the drink
@@ -67,6 +80,8 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 _ice = value;
                 InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         } 
@@ -99,6 +114,8 @@ namespace BleakwindBuffet.Data.Drinks
         {
             return $"{Size} Aretino Apple Juice";
         }
+
+        
     }
 }
 

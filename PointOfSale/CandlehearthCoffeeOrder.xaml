@@ -29,7 +29,7 @@
         </Grid.RowDefinitions>
 
         <CheckBox IsChecked="{Binding Path= Ice}" Name="uxIce" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" FontSize="20" >Ice</CheckBox>
-        <CheckBox IsChecked="{Binding Path= Cream}" Name="uxCream" Grid.ColumnSpan="2" Grid.Row="2" FontWeight="Bold" FontSize="20" >Cream</CheckBox>
+        <CheckBox IsChecked="{Binding Path= RoomForCream}" Name="uxCream" Grid.ColumnSpan="2" Grid.Row="2" FontWeight="Bold" FontSize="20" >Cream</CheckBox>
         <CheckBox IsChecked="{Binding Path= Decaf}" Name="uxDecaf" Grid.ColumnSpan="2" Grid.Row="3" FontWeight="Bold" FontSize="20" >Decaf</CheckBox>
 
         <TextBlock Grid.Row="4" Grid.ColumnSpan="1" FontWeight="Bold" TextAlignment="Left" FontSize="20" >Size</TextBlock>

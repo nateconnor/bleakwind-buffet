@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -24,13 +25,14 @@ namespace PointOfSale
     /// </summary>
     public partial class PhillyPoacherOrder : UserControl
     {
-        Order parent;
-        private PhillyPoacher pp = new PhillyPoacher();
+        OrderMenu parent;
+        private PhillyPoacher pp;
 
-        public PhillyPoacherOrder(Order p)
+        public PhillyPoacherOrder(OrderMenu p, PhillyPoacher philly)
         {
             InitializeComponent();
             parent = p;
+            pp = philly;
             DataContext = pp;
         }
 
@@ -42,7 +44,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+            //parent.menuBorder.Child = new MenuSelection(parent);
 
         }
     }

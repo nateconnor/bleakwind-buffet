@@ -4,6 +4,7 @@
 * Purpose: Controls the screen to finalize this order
 */
 using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,6 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Size =BleakwindBuffet.Data.Enums.Size;
 
+
 namespace PointOfSale
 {
     /// <summary>
@@ -25,13 +27,14 @@ namespace PointOfSale
     /// </summary>
     public partial class AretinoAppleJuiceOrder : UserControl
     {
-        Order parent;
+        OrderMenu parent;
 
-        private AretinoAppleJuice aj = new AretinoAppleJuice();
-        public AretinoAppleJuiceOrder(Order menu)
+        private AretinoAppleJuice aj;
+        public AretinoAppleJuiceOrder(OrderMenu menu, AretinoAppleJuice a)
         {
             InitializeComponent();
             parent = menu;
+             aj = a;
             DataContext = aj;
 
         }
@@ -43,6 +46,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+           // Order o = (Order)parent.DataContext;
+           // //AretinoAppleJuiceOrder bbo = this;
+           //// parent.menuBorder.Child = bbo;
+           // o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
 
         }

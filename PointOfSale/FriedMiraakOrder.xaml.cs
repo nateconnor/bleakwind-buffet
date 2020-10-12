@@ -4,6 +4,7 @@
 * Purpose: Controls the screen to finalize this order
 */
 using BleakwindBuffet.Data.Sides;
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,13 +27,14 @@ namespace PointOfSale
     /// </summary>
     public partial class FriedMiraakOrder : UserControl
     {
-        Order parent;
+        OrderMenu parent;
 
-        private FriedMiraak fm= new FriedMiraak();
-        public FriedMiraakOrder(Order menu)
+        private FriedMiraak fm;
+        public FriedMiraakOrder(OrderMenu menu, FriedMiraak f)
         {
             InitializeComponent();
             parent = menu;
+            fm = f;
             DataContext = fm;
 
         }
@@ -44,7 +46,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+            //parent.menuBorder.Child = new MenuSelection(parent);
 
         }
 

@@ -16,6 +16,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data;
+
 
 namespace PointOfSale
 {
@@ -24,12 +26,13 @@ namespace PointOfSale
     /// </summary>
     public partial class DoubleDraugrOrder : UserControl
     {
-        Order parent;
-        DoubleDraugr dd = new DoubleDraugr();
-        public DoubleDraugrOrder(Order p)
+        OrderMenu parent;
+        //private DoubleDraugr dd;
+        public DoubleDraugrOrder(OrderMenu p, DoubleDraugr dd)
         {
             InitializeComponent();
             parent = p;
+            //dd = d;
             DataContext = dd;
         }
 
@@ -40,7 +43,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+            //parent.menuBorder.Child = new MenuSelection(parent);
 
         }
     }

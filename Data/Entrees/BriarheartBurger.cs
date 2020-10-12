@@ -91,6 +91,7 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _bun = value;
                 InvokePropertyChanged("Bun");
+                InvokePropertyChanged("SpecialInstructions");
             }
 
         }
@@ -104,6 +105,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _ketchup = value;
                 InvokePropertyChanged("Ketchup");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }
@@ -117,6 +120,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _mustard = value;
                 InvokePropertyChanged("Mustard");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }
@@ -130,6 +135,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _pickle = value;
                 InvokePropertyChanged("Pickle");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }
@@ -143,6 +150,8 @@ namespace BleakwindBuffet.Data.Entrees
             {
                 _cheese = value;
                 InvokePropertyChanged("Cheese");
+                InvokePropertyChanged("SpecialInstructions");
+
             }
 
         }

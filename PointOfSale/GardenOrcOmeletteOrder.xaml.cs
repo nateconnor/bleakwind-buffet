@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -24,9 +25,9 @@ namespace PointOfSale
     /// </summary>
     public partial class GardenOrcOmeletteOrder : UserControl
     {
-        Order parent;
-        private GardenOrcOmelette orc = new GardenOrcOmelette();
-        public GardenOrcOmeletteOrder(Order p)
+        OrderMenu parent;
+        //private GardenOrcOmelette orc = new GardenOrcOmelette();
+        public GardenOrcOmeletteOrder(OrderMenu p, GardenOrcOmelette orc)
         {
             InitializeComponent();
             parent = p;
@@ -40,7 +41,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void backToScreen(object sender, RoutedEventArgs e)
         {
+            //Order o = (Order)parent.DataContext;
+
+            //o.Add((IOrderItem)this.DataContext);
             parent.menuBorder.Child = new MenuSelection(parent);
+            //parent.menuBorder.Child = new MenuSelection(parent);
 
         }
     }
