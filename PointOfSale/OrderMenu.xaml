@@ -87,11 +87,12 @@
 
 
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="1">
-            <Button Click="Finish_Click" Grid.Row="5" Grid.Column="1" FontWeight="Bold" FontSize="20" Width="130">Cancel Order</Button>
+            <Button Click="Cancel_Click" Grid.Row="5" Grid.Column="1" FontWeight="Bold" FontSize="20" Width="130">Cancel Order</Button>
             <Button Click="Finish_Click" FontWeight="Bold" FontSize="20" Width="133" Content="Finish Order"/>
 
         </StackPanel>
-        <Button Click="Delete_Click" Grid.Row="5" Grid.Column="0" FontWeight="Bold" FontSize="15" Margin="495,0,0,0" Foreground="IndianRed">Delete Selected Item</Button>
+        <Button Name="uxDeleteButton" Click="Delete_Click" Grid.Row="5" Grid.Column="0" FontWeight="Bold" FontSize="15" Margin="495,0,0,0" Foreground="IndianRed">Delete Selected Item</Button>
+        <Button Name="uxComboButton" Click="Delete_Click" Grid.Row="4" Grid.Column="0" FontWeight="Bold" FontSize="15" Margin="340,30,155,0" Grid.RowSpan="2">Add Combo</Button>
 
         <Border Name ="menuBorder" Grid.RowSpan="5"></Border>
     </Grid>

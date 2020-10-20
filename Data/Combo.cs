@@ -146,7 +146,7 @@ namespace BleakwindBuffet.Data
                 list.Add(_drink.ToString());
                     list.AddRange(_drink.SpecialInstructions);
                 list.Add(_side.ToString());
-                list.AddRange(_side.SpecialInstructions);
+                //list.AddRange(_side.SpecialInstructions);
 
                 return list;
             }

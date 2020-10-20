@@ -20,6 +20,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RoundRegister;
 
 namespace PointOfSale
 {
@@ -28,7 +29,7 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderMenu : UserControl
     {
-        private Order _order;
+        protected Order _order;
         public OrderMenu()
         {
             InitializeComponent();
@@ -92,11 +93,74 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void Finish_Click(object sender, RoutedEventArgs e)
         {
+            
+            menuBorder.Child = new PaymentOptions(this, _order.Total);
+            uxDeleteButton.IsEnabled = false;
+        }
+
+        /// <summary>
+        /// Cancels the order and creates a new one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
             _order = new Order();
             DataContext = _order;
             menuBorder.Child = new MenuSelection(this);
+            uxDeleteButton.IsEnabled = true;
+
 
         }
 
+        public void PrintReceipt(int paymentMethod, double change)
+        {
+            RecieptPrinter.PrintLine("Order " + _order.Number);
+            DateTime time = DateTime.Now;
+            RecieptPrinter.PrintLine(time.ToString());
+
+
+            //A complete list of all items in the order, including their price and special instructions
+            RecieptPrinter.PrintLine("---ORDER---");
+
+
+            foreach (IOrderItem item in _order)
+            {
+                if (item.ToString().Length <= 40)
+                {
+                    RecieptPrinter.PrintLine(item.ToString());
+                }
+                else
+                {
+                    string first = item.ToString().Substring(0, 40);
+                    string second = item.ToString().Substring(40);
+                }
+                foreach(string text in item.SpecialInstructions)
+                {
+                    RecieptPrinter.PrintLine(" -"+ text);
+                }
+            }
+
+            RecieptPrinter.PrintLine("---------------------------------------");
+
+
+            RecieptPrinter.PrintLine("Subtotal: $" + _order.Subtotal.ToString("0.##"));
+            RecieptPrinter.PrintLine("Tax: $" + _order.Tax.ToString("0.##"));
+            RecieptPrinter.PrintLine("Total: $" + _order.Total.ToString("0.##"));
+            if (paymentMethod == 0)
+            {
+                RecieptPrinter.PrintLine("---Cash Payment---");
+                RecieptPrinter.PrintLine("Change Owed: $" + change.ToString("0.##"));
+
+
+            }
+            else if (paymentMethod == 1)
+            {
+                RecieptPrinter.PrintLine("---Card Payment---");
+
+            }
+
+            RecieptPrinter.CutTape();
+        }
     }
 }
