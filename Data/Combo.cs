@@ -26,6 +26,13 @@ namespace BleakwindBuffet.Data
             _combo = new List<IOrderItem>();
         }
 
+        public  string FullString
+        {
+            get
+            {
+               return  "Combo";
+            }
+        }
         private Drink _drink;
 
         /// <summary>

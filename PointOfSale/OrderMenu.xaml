@@ -92,7 +92,7 @@
 
         </StackPanel>
         <Button Name="uxDeleteButton" Click="Delete_Click" Grid.Row="5" Grid.Column="0" FontWeight="Bold" FontSize="15" Margin="495,0,0,0" Foreground="IndianRed">Delete Selected Item</Button>
-        <Button Name="uxComboButton" Click="Delete_Click" Grid.Row="4" Grid.Column="0" FontWeight="Bold" FontSize="15" Margin="340,30,155,0" Grid.RowSpan="2">Add Combo</Button>
+        <Button Name="uxComboButton" Click="AddCombo_Click" Grid.Row="4" Grid.Column="0" FontWeight="Bold" FontSize="15" Margin="340,30,155,0" Grid.RowSpan="2">Add Combo</Button>
 
         <Border Name ="menuBorder" Grid.RowSpan="5"></Border>
     </Grid>

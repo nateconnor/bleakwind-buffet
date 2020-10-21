@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoundRegister;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BleakwindBuffet.Data;
 namespace PointOfSale
 {
     /// <summary>
@@ -43,12 +44,24 @@ namespace PointOfSale
 
         }
 
+       
         private void Finalize_Click(object sender, RoutedEventArgs e)
         {
-            rvm.uOnes += 5;
-            MessageBox.Show(""+rvm.uOnes);
-            //parent.PrintReceipt(0, rvm.ChangeOwed);
-            //rvm.MakeChange(rvm.ChangeOwed);
+            if (rvm.AmountDue > 0)
+            {
+                MessageBox.Show("Error: Insufficient Funds");
+            }
+            else
+            {
+                rvm.FinalizeSale();
+
+                parent.PrintReceipt(0, rvm.ChangeOwed);
+                parent.DataContext = new Order();
+
+                parent.menuBorder.Child = new MenuSelection(parent);
+                parent.uxDeleteButton.IsEnabled = true;
+            }
+            
         }
     }
 }

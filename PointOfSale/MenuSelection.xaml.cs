@@ -63,7 +63,6 @@ namespace PointOfSale
             Order o = (Order)parent.DataContext;
 
             o.Add((IOrderItem)item.DataContext);
-
         }
 
         /// <summary>

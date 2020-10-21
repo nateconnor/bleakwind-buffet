@@ -63,6 +63,7 @@ namespace BleakwindBuffet.Data
             }
         }
 
+
         /// <summary>
         /// Subtotal multiplied by the tax rate to get tax value
         /// </summary>

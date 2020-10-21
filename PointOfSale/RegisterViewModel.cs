@@ -228,6 +228,11 @@ namespace PointOfSale
             set
             {
                 _uDimes = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uDimes"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
 
             }
         }
@@ -241,6 +246,11 @@ namespace PointOfSale
             set
             {
                 _uPennies = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uPennies"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
 
             }
         }
@@ -255,6 +265,12 @@ namespace PointOfSale
             set
             {
                 _uNickels = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uNickels"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
+
 
             }
         }
@@ -269,6 +285,12 @@ namespace PointOfSale
             set
             {
                 _uQuarters = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uQuarters"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
+
 
             }
         }
@@ -283,6 +305,12 @@ namespace PointOfSale
             set
             {
                 _uHalfDollars = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uHalfDollars"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
+
 
             }
         }
@@ -297,7 +325,12 @@ namespace PointOfSale
             set
             {
                 _uDollars = value; 
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uDollars"));
+
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
+
 
 
             }
@@ -318,6 +351,7 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
 
+                MakeChange();
 
             }
         }
@@ -332,6 +366,12 @@ namespace PointOfSale
             set
             {
                 _uTwos = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uTwos"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
+
 
             }
         }
@@ -346,6 +386,12 @@ namespace PointOfSale
             set
             {
                 _uFives = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uFives"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
+
 
             }
         }
@@ -360,6 +406,12 @@ namespace PointOfSale
             set
             {
                 _uTens = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uTens"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
+
 
             }
         }
@@ -374,6 +426,12 @@ namespace PointOfSale
             set
             {
                 _uTwenties = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uTwenties"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
+
 
             }
         }
@@ -388,6 +446,12 @@ namespace PointOfSale
             set
             {
                 _uFifties = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uFifties"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
+
 
             }
         }
@@ -402,6 +466,12 @@ namespace PointOfSale
             set
             {
                 _uHundreds = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("uHundreds"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AmountDue"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOwed"));
+                MakeChange();
+
 
             }
         }
@@ -417,6 +487,8 @@ namespace PointOfSale
             set
             {
                 _changeDimes = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeDimes"));
+
 
             }
         }
@@ -430,6 +502,7 @@ namespace PointOfSale
             set
             {
                 _changePennies = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changePennies"));
 
             }
         }
@@ -444,6 +517,8 @@ namespace PointOfSale
             set
             {
                 _changeNickels = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeNickels"));
+
 
             }
         }
@@ -458,6 +533,8 @@ namespace PointOfSale
             set
             {
                 _changeQuarters = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeQuarters"));
+
 
             }
         }
@@ -472,6 +549,8 @@ namespace PointOfSale
             set
             {
                 _changeHalfDollars = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeHalfDollars"));
+
 
             }
         }
@@ -486,6 +565,8 @@ namespace PointOfSale
             set
             {
                 _changeDollars = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeDollars"));
+
 
             }
         }
@@ -500,6 +581,8 @@ namespace PointOfSale
             set
             {
                 _changeOnes = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeOnes"));
+
 
             }
         }
@@ -514,6 +597,8 @@ namespace PointOfSale
             set
             {
                 _changeTwos = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeTwos"));
+
 
             }
         }
@@ -528,6 +613,8 @@ namespace PointOfSale
             set
             {
                 _changeFives = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeFives"));
+
 
             }
         }
@@ -542,6 +629,8 @@ namespace PointOfSale
             set
             {
                 _changeTens = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeTens"));
+
 
             }
         }
@@ -556,6 +645,8 @@ namespace PointOfSale
             set
             {
                 _changeTwenties = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeTwenties"));
+
 
             }
         }
@@ -570,6 +661,8 @@ namespace PointOfSale
             set
             {
                 _changeFifties = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeFifties"));
+
 
             }
         }
@@ -584,117 +677,174 @@ namespace PointOfSale
             set
             {
                 _changeHundreds = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("changeHundreds"));
+
 
             }
         }
 
-        public void MakeChange(double changeOwed)
+        public void MakeChange()
         {
+            double changeOwed = ChangeOwed;
+            ResetChangeToZero();
+            //when user dollar changes
+            //notify amount due
             while (changeOwed > 1)
             {
-                if (changeOwed >100 && Hundreds>0)
+                if (changeOwed >=100 && Hundreds>0)
                 {
                     changeOwed -= 100;
-                    Hundreds--;
                     changeHundreds++;
+
                 }
                 else
-                    if (changeOwed > 50 && Fifties > 0)
+                    if (changeOwed >= 50 && Fifties > 0)
                 {
                     changeOwed -= 50;
-                    Fifties--;
                     changeFifties++;
 
                 }
                 else
-                    if (changeOwed > 20 && Twenties > 0)
+                    if (changeOwed >= 20 && Twenties > 0)
                 {
                     changeOwed -= 20;
-                    Twenties--;
                     changeTwenties++;
+
 
                 }
                 else
-                    if (changeOwed > 10 && Tens > 0)
+                    if (changeOwed >= 10 && Tens > 0)
                 {
                     changeOwed -= 10;
-                    Tens--;
                     changeTens++;
 
                 }
                 else
-                    if (changeOwed > 5 && Fives > 0)
+                    if (changeOwed >= 5 && Fives > 0)
                 {
                     changeOwed -= 5;
-                    Fives--;
                     changeFives++;
+
                 }
                 else
-                    if (changeOwed > 2 && Twos > 0)
+                    if (changeOwed >= 2 && Twos > 0)
                 {
                     changeOwed -= 2;
-                    Twos--;
                     changeTwos++;
+
                 }
                 else
-                    if (changeOwed > 1 && Ones > 0)
+                    if (changeOwed >= 1 && Ones > 0)
                 {
                     changeOwed -= 1;
-                    Ones--;
                     changeOnes++;
+
                 }
                 else
-                    if (changeOwed > 1 && Dollars > 0)
+                    if (changeOwed >= 1 && Dollars > 0)
                 {
                     changeOwed -= 1;
-                    Dollars--;
                     changeDollars++;
+
                 }
             }
-            while (changeOwed != 0)
+
+
+            while (changeOwed >= .01)
             {
-                if (changeOwed > .5 && HalfDollars > 0)
+                if (changeOwed >= .5 && HalfDollars > 0)
                 {
                     changeOwed -= .5;
-                    HalfDollars--;
                     changeHalfDollars++;
-                    
+
+
                 }
                 else
-                    if (changeOwed > .25 && Quarters > 0)
+                    if (changeOwed >= .25 && Quarters > 0)
                 {
                     changeOwed -= .25;
-                    Quarters--;
                     changeQuarters++;
+
                 }
                 else
-                    if (changeOwed > .1 && Dimes > 0)
+                    if (changeOwed >= .1 && Dimes > 0)
                 {
                     changeOwed -= .1;
-                    Dimes--;
                     changeDimes++;
+
                 }
                 else
-                    if (changeOwed > .05 && Nickels > 0)
+                    if (changeOwed >= .05 && Nickels > 0)
                 {
                     changeOwed -= .05;
-                    Nickels--;
                     changeNickels++;
+
                 }
                 else
-                    if (changeOwed > .01 && Pennies > 0)
+                    if (changeOwed >= .01 && Pennies > 0)
                 {
                     changeOwed -= .01;
-                    Pennies --;
                     changePennies++;
+
                 }
             }
+            
+        }
+
+        
+        private void ResetChangeToZero()
+        {
+            changePennies = 0;
+            changeNickels = 0;
+            changeDimes = 0;
+            changeQuarters = 0;
+            changeHalfDollars = 0;
+            changeDollars = 0;
+
+            changeOnes = 0;
+            changeTwos = 0;
+            changeFives = 0;
+            changeTens = 0;
+            changeTwenties = 0;
+            changeFifties = 0;
+            changeHundreds = 0;
+
 
         }
 
+        public void FinalizeSale()
+        {
+            CashDrawer.OpenDrawer();
+            Pennies += uPennies;
+            Nickels += uNickels;
+            Dimes += uDimes;
+            Quarters += uQuarters;
+            HalfDollars += uHalfDollars;
+            Dollars += uDollars;
 
+            Ones += uOnes;
+            Twos += uTwos;
+            Fives += uFives;
+            Tens += uTens;
+            Twenties += uTwenties;
+            Fifties += uFifties;
+            Hundreds += uHundreds;
 
+            Pennies -= changePennies;
+            Nickels -= changeNickels;
+            Dimes -= changeDimes;
+            Quarters -= changeQuarters;
+            HalfDollars -= changeHalfDollars;
+            Dollars -= changeDollars;
 
+            Ones -= changeOnes;
+            Twos -= changeTwos;
+            Fives -= changeFives;
+            Tens -= changeTens;
+            Twenties -= changeTwenties;
+            Fifties -= changeFifties;
+            Hundreds -= changeHundreds;
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

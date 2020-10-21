@@ -18,8 +18,8 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="{Binding Path=LabelText, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}" Name="uxText" Grid.Column="0" Margin ="4" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <Button Click="HandleButtonClick" Name="uxDecreaseButton" Grid.Column="1" FontSize="50" >-</Button>
-        <Button Click="HandleButtonClick" Name="uxIncreaseButton" Grid.Column="3" FontSize="50" >+</Button>
+        <Button  Name="uxDecreaseButton" Grid.Column="1" FontSize="50" >-</Button>
+        <Button Name="uxIncreaseButton" Grid.Column="3" FontSize="50" >+</Button>
         <TextBlock Text="{Binding Path=CustomerQuantity, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"  Name="uxCustomerQuantity" Grid.Column="2" Margin ="4" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         <TextBlock Text="{Binding Path=ChangeQuantity, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}" Name="uxChangeQuantity" Grid.Column="4" Margin ="4" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Background="LawnGreen"></TextBlock>
 

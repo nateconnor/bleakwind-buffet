@@ -113,6 +113,11 @@ namespace PointOfSale
 
         }
 
+        private void AddCombo_Click(object sender, RoutedEventArgs e)
+        {
+            Combo combo = new Combo();
+        }
+
         public void PrintReceipt(int paymentMethod, double change)
         {
             RecieptPrinter.PrintLine("Order " + _order.Number);
