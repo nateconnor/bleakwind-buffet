@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Nathan Connor
+* Class name: CurrencyControl.xaml.cs
+* Purpose: A custom control that controls the user quantity and change quantity of the register
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -19,7 +24,7 @@ namespace PointOfSale
     /// </summary>
     public partial class CurrencyControl : UserControl
     {
-
+        
         public static DependencyProperty CustomerQuantityProperty = DependencyProperty.Register("CustomerQuantity", typeof(int), typeof(CurrencyControl),
             new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
@@ -29,7 +34,9 @@ namespace PointOfSale
         public static DependencyProperty LabelTextProperty = DependencyProperty.Register("LabelText", typeof(string), typeof(CurrencyControl));
 
 
-
+        /// <summary>
+        /// The amount of currency that the customer has deposited
+        /// </summary>
         public int CustomerQuantity
         {
             get =>
@@ -43,7 +50,9 @@ namespace PointOfSale
         }
 
 
-
+        /// <summary>
+        /// The amount of change that the customer is owed
+        /// </summary>
         public int ChangeQuantity
         {
             get =>
@@ -56,6 +65,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// The display of what kind of currency is being transferred
+        /// </summary>
         public string LabelText
         {
             get =>
@@ -67,6 +79,10 @@ namespace PointOfSale
                 SetValue(LabelTextProperty, value);
             }
         }
+
+        /// <summary>
+        /// constructor for a currency control wpf
+        /// </summary>
         public CurrencyControl()
         {
             InitializeComponent();
@@ -76,11 +92,22 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// increases the customer quantity
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Increase_Click(object sender, RoutedEventArgs e)
         {
             CustomerQuantity++;
         }
 
+
+        /// <summary>
+        /// decreases the customer quantity
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Decrease_Click(object sender, RoutedEventArgs e)
         {
             if (CustomerQuantity != 0)
@@ -134,28 +161,7 @@ namespace PointOfSale
             remove { RemoveHandler(ValueClampedEvent, value); }
         }
 
-        /// <summary>
-        /// Callback for the ValueProperty, which clamps the Value to the range 
-        /// defined by MinValue and MaxValue
-        /// </summary>
-        /// <param name="sender">The NumberBox whose value is changing</param>
-        /// <param name="e">The event args</param>
-        //static void HandleValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
-        //{
-        //    if (e.Property.Name == "Value" && sender is NumberBox box)
-        //    {
-        //        if (box.Value < box.MinValue)
-        //        {
-        //            box.Value = box.MinValue;
-        //            box.RaiseEvent(new RoutedEventArgs(ValueClampedEvent));
-        //        }
-        //        if (box.Value > box.MaxValue)
-        //        {
-        //            box.Value = box.MaxValue;
-        //            box.RaiseEvent(new RoutedEventArgs(ValueClampedEvent));
-        //        }
-        //    }
-        //}
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

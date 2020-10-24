@@ -1,4 +1,9 @@
-﻿using RoundRegister;
+﻿/*
+* Author: Nathan Connor
+* Class name: RegisterDisplay.xaml.cs
+* Purpose: Allows the user to enter the amount of money they owe and receive change
+*/
+using RoundRegister;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,7 +41,11 @@ namespace PointOfSale
             DataContext = rvm;
         }
 
-
+        /// <summary>
+        /// returns the user to the menu selection screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             parent.menuBorder.Child = new MenuSelection(parent);
@@ -44,7 +53,11 @@ namespace PointOfSale
 
         }
 
-       
+       /// <summary>
+       /// Finalizes the order and makes sure the proper amount has been entered
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void Finalize_Click(object sender, RoutedEventArgs e)
         {
             if (rvm.AmountDue > 0)

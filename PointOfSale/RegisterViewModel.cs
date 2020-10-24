@@ -1,4 +1,9 @@
-﻿using RoundRegister;
+﻿/*
+ * Author: Nathan Connor
+ * Class: RegisterViewModel.cs
+ * Purpose: Act as an inbetween class to pass logic into the register UI
+ */
+using RoundRegister;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +14,10 @@ namespace PointOfSale
     public class RegisterViewModel : INotifyPropertyChanged
     {
         private double total;
+        /// <summary>
+        /// Constructor for RegisterviewModel
+        /// </summary>
+        /// <param name="t"></param>
         public RegisterViewModel(double t)
         {
             total = t;
@@ -16,6 +25,9 @@ namespace PointOfSale
         }
 
         private double _amountDue;
+        /// <summary>
+        /// The amount the user still has to pay
+        /// </summary>
         public double AmountDue
         {
             get
@@ -34,6 +46,10 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// gets the amount the user has given subtracted from the total that they owe
+        /// </summary>
+        /// <returns></returns>
         private double getAmountDue()
         {
             double amount = total;
@@ -43,6 +59,10 @@ namespace PointOfSale
         }
 
         private double _changeOwed;
+
+        /// <summary>
+        /// The change that the cash register owes the user
+        /// </summary>
         public double ChangeOwed
         {
             get
@@ -58,6 +78,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// The pennies currently in the register
+        /// </summary>
         public int Pennies
         {
             get
@@ -71,6 +94,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// The nickels currently in the register
+        /// </summary>
         public int Nickels
         {
             get
@@ -84,7 +110,9 @@ namespace PointOfSale
             }
         }
 
-
+        /// <summary>
+        /// The dimes currently in the register
+        /// </summary>
         public int Dimes
         {
             get
@@ -97,6 +125,9 @@ namespace PointOfSale
 
             }
         }
+        /// <summary>
+        /// The quarters currently in the register
+        /// </summary>
         public int Quarters
         {
             get
@@ -109,6 +140,10 @@ namespace PointOfSale
 
             }
         }
+
+        /// <summary>
+        /// The dollar coins currently in the register
+        /// </summary>
         public int Dollars
         {
             get
@@ -121,6 +156,10 @@ namespace PointOfSale
 
             }
         }
+
+        /// <summary>
+        /// The half dollars currently in the register
+        /// </summary>
         public int HalfDollars
         {
             get
@@ -133,6 +172,10 @@ namespace PointOfSale
 
             }
         }
+
+        /// <summary>
+        /// The two dollar bills currently in the register
+        /// </summary>
         public int Twos
         {
             get
@@ -145,6 +188,10 @@ namespace PointOfSale
 
             }
         }
+
+        /// <summary>
+        /// The ones currently in the register
+        /// </summary>
         public int Ones
         {
             get
@@ -157,6 +204,10 @@ namespace PointOfSale
                 
             }
         }
+
+        /// <summary>
+        /// The fives currently in the register
+        /// </summary>
         public int Fives
         {
             get
@@ -169,6 +220,10 @@ namespace PointOfSale
 
             }
         }
+
+        /// <summary>
+        /// The tens currently in the register
+        /// </summary>
         public int Tens
         {
             get
@@ -181,6 +236,10 @@ namespace PointOfSale
 
             }
         }
+
+        /// <summary>
+        /// The twenties currently in the register
+        /// </summary>
         public int Twenties
         {
             get
@@ -193,6 +252,10 @@ namespace PointOfSale
 
             }
         }
+
+        /// <summary>
+        /// The fifties currently in the register
+        /// </summary>
         public int Fifties
         {
             get
@@ -205,6 +268,10 @@ namespace PointOfSale
 
             }
         }
+
+        /// <summary>
+        /// The hundreds currently in the register
+        /// </summary>
         public int Hundreds
         {
             get
@@ -219,6 +286,10 @@ namespace PointOfSale
         }
         
         private int _uDimes=0;
+
+        /// <summary>
+        /// The dimes that the user has given
+        /// </summary>
         public int uDimes
         {
             get
@@ -237,6 +308,10 @@ namespace PointOfSale
             }
         }
         private int _uPennies = 0;
+
+        /// <summary>
+        /// The pennies that the user has given
+        /// </summary>
         public int uPennies
         {
             get
@@ -256,6 +331,10 @@ namespace PointOfSale
         }
 
         private int _uNickels = 0;
+
+        /// <summary>
+        /// The nickels that the user has given
+        /// </summary>
         public int uNickels
         {
             get
@@ -276,6 +355,10 @@ namespace PointOfSale
         }
 
         private int _uQuarters = 0;
+
+        /// <summary>
+        /// The quarters that the user has given
+        /// </summary>
         public int uQuarters
         {
             get
@@ -296,6 +379,10 @@ namespace PointOfSale
         }
 
         private int _uHalfDollars = 0;
+
+        /// <summary>
+        /// The half dollars that the user has given
+        /// </summary>
         public int uHalfDollars
         {
             get
@@ -316,6 +403,10 @@ namespace PointOfSale
         }
 
         private int _uDollars = 0;
+
+        /// <summary>
+        /// The dollars that the user has given
+        /// </summary>
         public int uDollars
         {
             get
@@ -337,6 +428,10 @@ namespace PointOfSale
         }
 
         private int _uOnes = 0;
+
+        /// <summary>
+        /// The ones that the user has given
+        /// </summary>
         public int uOnes
         {
             get
@@ -357,6 +452,10 @@ namespace PointOfSale
         }
 
         private int _uTwos = 0;
+
+        /// <summary>
+        /// The twos that the user has given
+        /// </summary>
         public int uTwos
         {
             get
@@ -377,6 +476,10 @@ namespace PointOfSale
         }
 
         private int _uFives = 0;
+
+        /// <summary>
+        /// The fives that the user has given
+        /// </summary>
         public int uFives
         {
             get
@@ -397,6 +500,10 @@ namespace PointOfSale
         }
 
         private int _uTens = 0;
+
+        /// <summary>
+        /// The tens that the user has given
+        /// </summary>
         public int uTens
         {
             get
@@ -417,6 +524,10 @@ namespace PointOfSale
         }
 
         private int _uTwenties = 0;
+
+        /// <summary>
+        /// The twenties that the user has given
+        /// </summary>
         public int uTwenties
         {
             get
@@ -437,6 +548,10 @@ namespace PointOfSale
         }
 
         private int _uFifties = 0;
+
+        /// <summary>
+        /// The fifties that the user has given
+        /// </summary>
         public int uFifties
         {
             get
@@ -457,6 +572,10 @@ namespace PointOfSale
         }
 
         private int _uHundreds = 0;
+
+        /// <summary>
+        /// The hundreds that the user has given
+        /// </summary>
         public int uHundreds
         {
             get
@@ -478,6 +597,10 @@ namespace PointOfSale
 
 
         private int _changeDimes = 0;
+
+        /// <summary>
+        /// The dimes that the user is owed
+        /// </summary>
         public int changeDimes
         {
             get
@@ -493,6 +616,10 @@ namespace PointOfSale
             }
         }
         private int _changePennies = 0;
+
+        /// <summary>
+        /// The pennies that the user is owed
+        /// </summary>
         public int changePennies
         {
             get
@@ -508,6 +635,10 @@ namespace PointOfSale
         }
 
         private int _changeNickels = 0;
+
+        /// <summary>
+        /// The nickels that the user is owed
+        /// </summary>
         public int changeNickels
         {
             get
@@ -524,6 +655,10 @@ namespace PointOfSale
         }
 
         private int _changeQuarters = 0;
+
+        /// <summary>
+        /// The quarters that the user is owed
+        /// </summary>
         public int changeQuarters
         {
             get
@@ -540,6 +675,10 @@ namespace PointOfSale
         }
 
         private int _changeHalfDollars = 0;
+
+        /// <summary>
+        /// The half dollars that the user is owed
+        /// </summary>
         public int changeHalfDollars
         {
             get
@@ -556,6 +695,10 @@ namespace PointOfSale
         }
 
         private int _changeDollars = 0;
+
+        /// <summary>
+        /// The dollars that the user is owed
+        /// </summary>
         public int changeDollars
         {
             get
@@ -572,6 +715,10 @@ namespace PointOfSale
         }
 
         private int _changeOnes = 0;
+
+        /// <summary>
+        /// The ones that the user is owed
+        /// </summary>
         public int changeOnes
         {
             get
@@ -588,6 +735,10 @@ namespace PointOfSale
         }
 
         private int _changeTwos = 0;
+
+        /// <summary>
+        /// The twos that the user is owed
+        /// </summary>
         public int changeTwos
         {
             get
@@ -604,6 +755,10 @@ namespace PointOfSale
         }
 
         private int _changeFives = 0;
+
+        /// <summary>
+        /// The fives that the user is owed
+        /// </summary>
         public int changeFives
         {
             get
@@ -620,6 +775,10 @@ namespace PointOfSale
         }
 
         private int _changeTens = 0;
+
+        /// <summary>
+        /// The tens that the user is owed
+        /// </summary>
         public int changeTens
         {
             get
@@ -636,6 +795,10 @@ namespace PointOfSale
         }
 
         private int _changeTwenties = 0;
+
+        /// <summary>
+        /// The twenties that the user is owed
+        /// </summary>
         public int changeTwenties
         {
             get
@@ -652,6 +815,10 @@ namespace PointOfSale
         }
 
         private int _changeFifties = 0;
+
+        /// <summary>
+        /// The fifties that the user is owed
+        /// </summary>
         public int changeFifties
         {
             get
@@ -668,6 +835,10 @@ namespace PointOfSale
         }
 
         private int _changeHundreds = 0;
+
+        /// <summary>
+        /// The hundreds that the user is owed
+        /// </summary>
         public int changeHundreds
         {
             get
@@ -683,6 +854,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Calculates how much of each change the user is owed
+        /// </summary>
         public void MakeChange()
         {
             double changeOwed = ChangeOwed;
@@ -791,7 +965,9 @@ namespace PointOfSale
             
         }
 
-        
+        /// <summary>
+        /// Resets the change the user is owed to zero
+        /// </summary>
         private void ResetChangeToZero()
         {
             changePennies = 0;
@@ -812,6 +988,9 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// Finalizes the sale and takes user money and gives user change
+        /// </summary>
         public void FinalizeSale()
         {
             CashDrawer.OpenDrawer();
