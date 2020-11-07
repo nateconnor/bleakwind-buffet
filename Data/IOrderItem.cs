@@ -15,6 +15,7 @@ namespace BleakwindBuffet.Data
     /// </summary>
    public interface IOrderItem : INotifyPropertyChanged
     {
+        string Type { get; }
 
         double Price { get; }
 

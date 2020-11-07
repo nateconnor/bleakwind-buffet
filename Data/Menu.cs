@@ -10,6 +10,10 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
+using System.Collections;
+using System.IO;
+using System.Linq;
+ 
 
 namespace BleakwindBuffet.Data
 {
@@ -18,6 +22,18 @@ namespace BleakwindBuffet.Data
     /// </summary>
    public static class Menu
     {
+
+        public static string[] OrderTypes
+        {
+            get => new string[]
+            {
+            "Entree",
+            "Drink",
+            "Side"
+           
+            };
+        }
+
         /// <summary>
         /// Gets all possible entrees on the menu
         /// </summary>
@@ -418,5 +434,148 @@ namespace BleakwindBuffet.Data
 
             return fullMenu;
         }
+
+        /// <summary>
+        /// filters the items by the food category they are in
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="categories"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, IEnumerable<string> categories)
+        {
+            // If no filter is specified, just return the provided collection
+            if (categories == null || categories.Count() == 0) return items;
+
+            // Filter the supplied collection of movies
+            List<IOrderItem> results = new List<IOrderItem>();
+            foreach (IOrderItem item in items)
+            {
+                if (item.Type != null && categories.Contains(item.Type))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the items by calories
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, int? min, int? max)
+
+        {
+            if (min == null && max == null) return items; // TODO: Filter movies
+
+            var results = new List<IOrderItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Calories <= max) results.Add(item);
+                }
+                return results;
+
+
+            }
+
+            // only a minimum specified
+            if (max == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IOrderItem item in items)
+            {
+                if (item.Calories >= min && item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// filters the items by price
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
+        {
+            if (min == null && max == null) return items; // TODO: Filter movies
+
+            var results = new List<IOrderItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price <= max) results.Add(item);
+                }
+                return results;
+
+
+            }
+
+            // only a minimum specified
+            if (max == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IOrderItem item in items)
+            {
+                if (item.Price >= min && item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        /// <summary>
+        /// filters the items by search terms
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="terms"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> items, string terms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (terms == null)
+                return items;
+            foreach (IOrderItem item in items)
+            {
+                if (item.ToString().ToLower().Contains(terms.ToLower()))
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+
     }
+
+
 }

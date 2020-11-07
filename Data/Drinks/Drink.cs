@@ -64,6 +64,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
+        public virtual string Type => "Drink";
+
         public virtual event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>

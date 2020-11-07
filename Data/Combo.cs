@@ -18,6 +18,8 @@ namespace BleakwindBuffet.Data
     {
         private List<IOrderItem> _combo;
 
+        public string Type => "Combo";
+
         /// <summary>
         /// Constructor for combo
         /// </summary>

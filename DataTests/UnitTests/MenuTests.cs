@@ -13,6 +13,7 @@ using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Entrees;
+using System.Linq;
 
 namespace BleakwindBuffet.DataTests.UnitTests
 {
@@ -256,6 +257,72 @@ namespace BleakwindBuffet.DataTests.UnitTests
             item => Assert.Contains("Large Watermelon Sailor Soda", item.ToString()));
 
             Assert.Equal(52, menu.Count);
+
+
+        }
+
+        [Fact]
+        public void SearchItemFiltersItems()
+        {
+            var items = Menu.Entrees();
+
+            items = Menu.Search(items, "burg");
+
+            Assert.Single(items);
+
+            items = Menu.FullMenu();
+
+            items = Menu.Search(items, null);
+            Assert.Equal(52, items.Count());
+
+
+        }
+
+        [Fact]
+        public void CategoryFiltersItems()
+        {
+            var items = Menu.Entrees();
+
+            items = Menu.FilterByCategory(items, new string[1] { "Drink"});
+
+            Assert.Empty(items);
+
+            items = Menu.FullMenu();
+
+            items = Menu.Search(items, null);
+            Assert.Equal(52, items.Count());
+
+
+        }
+
+        [Fact]
+        public void CaloriesFiltersItems()
+        {
+            var items = Menu.Entrees();
+
+            items = Menu.FilterByCalories(items, 600, 800);
+
+            Assert.Equal(3, items.Count());
+            items = Menu.FullMenu();
+
+            items = Menu.Search(items, null);
+            Assert.Equal(52, items.Count());
+
+
+        }
+
+        [Fact]
+        public void PriceFiltersItems()
+        {
+            var items = Menu.Entrees();
+
+            items = Menu.FilterByPrice(items, 6, 7);
+
+            Assert.Equal(2, items.Count());
+            items = Menu.FullMenu();
+
+            items = Menu.Search(items, null);
+            Assert.Equal(52, items.Count());
 
 
         }

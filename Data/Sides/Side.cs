@@ -19,6 +19,7 @@ namespace BleakwindBuffet.Data.Sides
     {
         protected Size size = Size.Small;
 
+        public virtual string Type => "Side";
         /// <summary>
         /// The size of the side
         /// </summary>
