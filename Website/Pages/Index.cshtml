@@ -117,25 +117,26 @@
 
                     </ul>
                 </div>
-            </div>
 
-            <h4>Available Soda Flavors:</h4>
-            <ul class="flavors">
-                @foreach (BleakwindBuffet.Data.Enums.SodaFlavor flavor in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
-                {
-                    <li>
+                </div>
 
-                        <div class="flavor">@flavor.ToString()</div>
-                    </li>
-                }
-            </ul>
+                <h4>Available Soda Flavors:</h4>
+                <ul class="flavors">
+                    @foreach (BleakwindBuffet.Data.Enums.SodaFlavor flavor in Enum.GetValues(typeof(BleakwindBuffet.Data.Enums.SodaFlavor)))
+                    {
+                        <li>
 
-            <p>Any entree, side, and drink can be combined into a Combo with a $1 discount.</p>
+                            <div class="flavor">@flavor.ToString()</div>
+                        </li>
+                    }
+                </ul>
 
-        
-
+                <p>Any entree, side, and drink can be combined into a Combo with a $1 discount.</p>
 
 
-       
 
-    </form>
+
+
+
+
+</form>
