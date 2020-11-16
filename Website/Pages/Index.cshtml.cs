@@ -16,6 +16,7 @@ using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Sides;
 using System.Transactions;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.CodeAnalysis;
 
 namespace Website.Pages
 {
@@ -62,22 +63,99 @@ namespace Website.Pages
         public void OnGet(string SearchTerms, string[] OrderTypes, int? calMin, int? calMax, double? priceMin, double? priceMax)
        
         {
-            Entrees = Menu.Search(Menu.Entrees(),SearchTerms);
-            Drinks = Menu.Search(Menu.Drinks(), SearchTerms);
-            Sides = Menu.Search(Menu.Sides(), SearchTerms);
+            if (SearchTerms != null)
+            {
+                string[] words = SearchTerms.Split(' ');
+                for(int i =0; i<words.Length; i++)
+                {
+                    words[i] = words[i].ToLower();
+                }
 
-            Entrees = Menu.FilterByCategory(Entrees, OrderTypes);
-            Drinks = Menu.FilterByCategory(Drinks, OrderTypes);
-            Sides = Menu.FilterByCategory(Sides, OrderTypes);
 
-            Entrees = Menu.FilterByCalories(Entrees, calMin, calMax);
-            Drinks = Menu.FilterByCalories(Drinks, calMin, calMax);
-            Sides = Menu.FilterByCalories(Sides, calMin, calMax);
+                //Entrees = Menu.Entrees().Where(item =>  item.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+                Entrees = Menu.Entrees().Where(item => words.Any(item.ToString().ToLower().Contains) || words.Any(item.Description.ToLower().Contains));
+                Drinks = Menu.Drinks().Where(item => words.Any(item.ToString().ToLower().Contains) || words.Any(item.Description.ToLower().Contains));
+                Sides = Menu.Sides().Where(item => words.Any(item.ToString().ToLower().Contains) || words.Any(item.Description.ToLower().Contains));
 
-            Entrees = Menu.FilterByPrice(Entrees, priceMin, priceMax);
-            Drinks = Menu.FilterByPrice(Drinks, priceMin, priceMax);
+               // Drinks = Menu.Drinks().Where(item => item.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
 
-            Sides = Menu.FilterByPrice(Sides, priceMin, priceMax);
+               // Sides = Menu.Sides().Where(item => item.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+                //DO MULTIPLE WORDS AND DESCRIPTION
+            }
+
+            if (OrderTypes != null && OrderTypes.Length != 0)
+            {
+                Entrees = Entrees.Where(item =>
+                    item.Type != null &&
+                    OrderTypes.Contains(item.Type)
+                    );
+
+                Drinks = Drinks.Where(item =>
+                    item.Type != null &&
+                    OrderTypes.Contains(item.Type)
+                    );
+
+                Sides = Sides.Where(item =>
+                    item.Type != null &&
+                    OrderTypes.Contains(item.Type)
+                    );
+            }
+
+            if (calMin != null && calMax != null)
+            {
+                Entrees = Entrees.Where(item =>
+                    item.Calories >= calMin &&
+                                        item.Calories <= calMax
+
+                    );
+                Drinks = Drinks.Where(item =>
+                    item.Calories >= calMin &&
+                                        item.Calories <= calMax
+
+                    );
+                Sides = Sides.Where(item =>
+                    item.Calories >= calMin &&
+                                        item.Calories <= calMax
+
+                    );
+            }
+
+            if (priceMin != null && priceMax != null)
+            {
+                Entrees = Entrees.Where(item =>
+                    item.Price >= priceMin &&
+                                        item.Price <= priceMax
+
+                    );
+                Drinks = Drinks.Where(item =>
+                    item.Price >= priceMin &&
+                                        item.Price <= priceMax
+
+                    );
+                Sides = Sides.Where(item =>
+                    item.Price >= priceMin &&
+                                        item.Price <= priceMax
+
+                    );
+            }
+
+
+            //Entrees = Menu.Search(Menu.Entrees(),SearchTerms);
+            //Drinks = Menu.Search(Menu.Drinks(), SearchTerms);
+            //Sides = Menu.Search(Menu.Sides(), SearchTerms);
+
+            //Entrees = Menu.FilterByCategory(Entrees, OrderTypes);
+            //Drinks = Menu.FilterByCategory(Drinks, OrderTypes);
+            //Sides = Menu.FilterByCategory(Sides, OrderTypes);
+
+            //Entrees = Menu.FilterByCalories(Entrees, calMin, calMax);
+            //Drinks = Menu.FilterByCalories(Drinks, calMin, calMax);
+            //Sides = Menu.FilterByCalories(Sides, calMin, calMax);
+
+            //Entrees = Menu.FilterByPrice(Entrees, priceMin, priceMax);
+            //Drinks = Menu.FilterByPrice(Drinks, priceMin, priceMax);
+
+            //Sides = Menu.FilterByPrice(Sides, priceMin, priceMax);
 
 
         }

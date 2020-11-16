@@ -49,6 +49,17 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
+        /// Description of the food item
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Perfectly prepared hash brown pancakes.";
+            }
+        }
+
+        /// <summary>
         /// The calories of the side
         /// </summary>
         public override uint Calories

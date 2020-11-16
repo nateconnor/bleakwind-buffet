@@ -40,6 +40,17 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Description of the food item
+        /// </summary>
+        public override string Description {
+            get
+            {
+                return "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.";
+            }
+        }
+
+
+        /// <summary>
         /// A list of special insturctions for preparing the entree
         /// </summary>
         public override List<String> SpecialInstructions
@@ -155,6 +166,7 @@ namespace BleakwindBuffet.Data.Entrees
             }
 
         }
+
 
 
 

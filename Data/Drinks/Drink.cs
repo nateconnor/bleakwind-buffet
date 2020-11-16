@@ -68,6 +68,12 @@ namespace BleakwindBuffet.Data.Drinks
 
         public virtual event PropertyChangedEventHandler PropertyChanged;
 
+
+        /// <summary>
+        /// Description of the drink
+        /// </summary>
+        public abstract string Description { get; }
+
         /// <summary>
         /// Invokes the property changed
         /// </summary>

@@ -21,6 +21,8 @@ namespace BleakwindBuffet.Data
 
         uint Calories { get; }
 
+        string Description { get; }
+
         List<string> SpecialInstructions { get; }
     }
 }

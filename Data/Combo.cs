@@ -161,6 +161,8 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        public string Description => throw new NotImplementedException();
+
         /// <summary>
         /// Sends property events if the proprties of the combo change
         /// </summary>

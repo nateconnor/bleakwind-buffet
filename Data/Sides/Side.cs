@@ -63,6 +63,11 @@ namespace BleakwindBuffet.Data.Sides
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
+        /// <summary>
+        /// Description of the side
+        /// </summary>
+        public abstract string Description { get; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>

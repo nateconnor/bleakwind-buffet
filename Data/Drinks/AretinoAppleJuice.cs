@@ -51,6 +51,17 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
+        /// Description of the food item
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Fresh squeezed apple juice.";
+            }
+        }
+
+        /// <summary>
         /// The calories of the drink
         /// </summary>
         public override uint Calories

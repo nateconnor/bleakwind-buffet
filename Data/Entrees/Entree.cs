@@ -23,6 +23,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value> In US Dollars</value>
         public abstract double Price { get; }
 
+        /// <summary>
+        /// Description of the entree
+        /// </summary>
+        public abstract string Description { get; }
+
         public virtual string FullString
         {
             get
